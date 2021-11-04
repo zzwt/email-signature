@@ -97,7 +97,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                 <Slider
                   label="Font Size"
                   min={8}
-                  max={16}
+                  max={25}
                   initialValue={10}
                   onChange={(val) => {
                     update(key, 'label', {
@@ -149,7 +149,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
               <Slider
                 label="Font Size"
                 min={8}
-                max={16}
+                max={25}
                 initialValue={10}
                 onChange={(val) => {
                   update(key, 'content', {

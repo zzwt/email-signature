@@ -15,24 +15,12 @@ const EditorPage: React.FC<Data> = ({ template }) => {
     [template]
   );
   const defaultConfig = {
-    // name: {
-    //   value: 'Joel Lu',
-    //   color: '#ff0000',
-    //   label: 'Full Name',
-    //   type: ElementType.NAME,
-    // },
-    // title: {
-    //   value: 'Developer',
-    //   color: '#ff0000',
-    //   label: 'Title',
-    //   type: ElementType.TITLE,
-    // },
     fields: [
       {
         label: {
           value: 'Full Name',
           // type: { editable: true, value: 'text' }, // text | icon
-          color: { editable: false, value: '#f0f000' },
+          color: { editable: false, value: '#626262' },
           display: { editable: false, value: true },
           bold: { editable: false, value: false },
           size: { editable: false, value: 12 },
@@ -40,9 +28,9 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         content: {
           value: 'Joel Lu',
           // type: { editable: true, value: 'text' }
-          color: { editable: true, value: '#ff0000' },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
+          color: { editable: true, value: '#626262' },
+          bold: { editable: true, value: true },
+          size: { editable: true, value: 20 },
         },
         key: 0,
       },
@@ -50,7 +38,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         label: {
           value: 'Title',
           // type: { editable: false, value: 'text' }, // text | icon
-          color: { editable: false, value: '#f0f000' },
+          color: { editable: false, value: '#626262' },
           display: { editable: false, value: true },
           bold: { editable: false, value: false },
           size: { editable: false, value: 12 },
@@ -58,7 +46,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         content: {
           value: 'Developer',
           type: { editable: true, value: 'text' },
-          color: { editable: true, value: '#ff0000' },
+          color: { editable: true, value: '#626262' },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
         },
@@ -68,7 +56,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         label: {
           value: 'Website',
           type: { editable: true, value: 'text' }, // text | icon
-          color: { editable: true, value: '#f0f000' },
+          color: { editable: true, value: '#626262' },
           display: { editable: true, value: true },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
@@ -76,7 +64,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         content: {
           value: 'www.google.com',
           type: { editable: true, value: 'text' },
-          color: { editable: true, value: '#ff0000' },
+          color: { editable: true, value: '#626262' },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
         },
@@ -86,7 +74,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         label: {
           value: 'tel',
           type: { editable: true, value: 'text' }, // text | icon
-          color: { editable: true, value: '#f0f000' },
+          color: { editable: true, value: '#626262' },
           display: { editable: true, value: true },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
@@ -94,7 +82,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         content: {
           value: '0333333333',
           type: { editable: true, value: 'text' },
-          color: { editable: true, value: '#ff0000' },
+          color: { editable: true, value: '#626262' },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
         },

@@ -53,12 +53,12 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
       });
   return (
     <table
-      width="600"
+      // width="600"
       // border="10"
       cellSpacing="0"
       cellPadding="0"
       // bgcolor="red"
-      // style={{ border: '1px solid black' }}
+      style={{ background: 'white' }}
     >
       <tbody>
         <tr>
@@ -171,8 +171,10 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                   {/* Name */}
                   <td
                     style={{
-                      fontSize: '20px',
-                      fontWeight: 'normal',
+                      fontSize: config.fields[0].content.size.value,
+                      fontWeight: config.fields[0].content.bold.value
+                        ? 'bold'
+                        : 'normal',
                       display: 'block',
                       color: config.fields[0].content.color.value,
                     }}
@@ -185,8 +187,11 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                   <td style={{ padding: 0 }}>
                     <div
                       style={{
-                        fontSize: '10px',
+                        fontSize: config.fields[1].content.size.value,
                         minWidth: '200px',
+                        fontWeight: config.fields[1].content.bold.value
+                          ? 'bold'
+                          : 'normal',
                         color: config.fields[1].content.color.value,
                       }}
                     >

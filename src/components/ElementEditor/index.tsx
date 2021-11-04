@@ -17,6 +17,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
   elementConfig,
   update,
 }) => {
+  const { label, content, key } = elementConfig;
   const [toggleMore, setToggleMore] = useState(false);
   const renderToggler = useCallback(
     () =>
@@ -40,16 +41,17 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
     <div className={styles.field_container}>
       <div className={styles.basic}>
         <label className={classNames({ [styles.toggler_open]: toggleMore })}>
-          {elementConfig.label.value}
+          {label.display.value && label.value}
         </label>
+
         <div className={styles.content}>
           <input
             className={classNames({ [styles.toggler_open]: toggleMore })}
             type="text"
-            value={elementConfig.content.value}
+            value={content.value}
             onChange={(e) =>
-              update(elementConfig.key, 'content', {
-                ...elementConfig.content,
+              update(key, 'content', {
+                ...content,
                 value: e.target.value,
               })
             }
@@ -63,37 +65,61 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             <label className={styles.field_more_label_heading}>
               Label Settings
             </label>
-            {elementConfig.label.display.editable && (
+            {label.display.editable && (
               <div className={styles.container_space}>
-                <Toggler label="Display" onChange={() => {}} />
-              </div>
-            )}
-            {elementConfig.label.color.editable && (
-              <div className={styles.container_space}>
-                <ColorPicker
-                  initialColor={elementConfig.label.color.value}
-                  onColorChange={(color) => {
-                    update(elementConfig.key, {
-                      color,
+                <Toggler
+                  label="Display"
+                  checked={label.display.value}
+                  onChange={(val) => {
+                    update(key, 'label', {
+                      ...label,
+                      display: { ...label.display, value: val },
                     });
                   }}
                 />
               </div>
             )}
-            {elementConfig.label.size.editable && (
+            {label.color.editable && label.display.value && (
+              <div className={styles.container_space}>
+                <ColorPicker
+                  initialColor={label.color.value}
+                  onColorChange={(color) => {
+                    update(key, 'label', {
+                      ...label,
+                      color: { ...label.color, value: color },
+                    });
+                  }}
+                />
+              </div>
+            )}
+            {label.size.editable && label.display.value && (
               <div className={styles.container_space}>
                 <Slider
                   label="Font Size"
                   min={8}
                   max={16}
                   initialValue={10}
-                  onChange={() => {}}
+                  onChange={(val) => {
+                    update(key, 'label', {
+                      ...label,
+                      size: { ...label.size, value: val },
+                    });
+                  }}
                 />
               </div>
             )}
-            {elementConfig.label.bold.editable && (
+            {label.bold.editable && label.display.value && (
               <div className={styles.container_space}>
-                <Toggler label="Bold" onChange={() => {}} />
+                <Toggler
+                  label="Bold"
+                  checked={label.bold.value}
+                  onChange={(val) => {
+                    update(key, 'label', {
+                      ...label,
+                      bold: { ...label.bold, value: val },
+                    });
+                  }}
+                />
               </div>
             )}
           </div>
@@ -110,10 +136,11 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             </div>
             <div className={styles.container_space}>
               <ColorPicker
-                initialColor={elementConfig.content.color.value}
+                initialColor={content.color.value}
                 onColorChange={(color) => {
-                  update(elementConfig.key, {
-                    color,
+                  update(key, 'content', {
+                    ...content,
+                    color: { ...content.color, value: color },
                   });
                 }}
               />
@@ -124,11 +151,25 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                 min={8}
                 max={16}
                 initialValue={10}
-                onChange={() => {}}
+                onChange={(val) => {
+                  update(key, 'content', {
+                    ...content,
+                    size: { ...content.size, value: val },
+                  });
+                }}
               />
             </div>
             <div className={styles.container_space}>
-              <Toggler label="Bold" onChange={() => {}} />
+              <Toggler
+                label="Bold"
+                checked={content.bold.value}
+                onChange={(val) => {
+                  update(key, 'content', {
+                    ...content,
+                    bold: { ...content.bold, value: val },
+                  });
+                }}
+              />
             </div>
           </div>
         </div>

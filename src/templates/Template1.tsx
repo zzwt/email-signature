@@ -7,43 +7,50 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
   const renderFields = () =>
     config.fields
       .filter((_: any, i: number) => i > 1)
-      .map((field: any, index: number) => (
-        <tr key={index}>
-          <td style={{ padding: 0 }}>
-            <div
-              style={{
-                fontSize: '16px',
-                minWidth: '200px',
-                color: '#b7b5b5',
-              }}
-            >
-              <span
+      .map((field: any, index: number) => {
+        const { label, content } = field;
+        return (
+          <tr key={index}>
+            <td style={{ padding: 0 }}>
+              <div
                 style={{
-                  display: 'inline-block',
-                  color: '#b7b5b5',
-                  textDecoration: 'none',
-                  fontSize: '14px',
-                  marginRight: 5,
+                  fontSize: '16px',
+                  minWidth: '200px',
+                  // color: field.label.color.value,
                 }}
               >
-                {field.label.value}
-              </span>
-              <a
-                href={`https://www.google.com`}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: '#2299dd',
-                  textDecoration: 'none',
-                  fontSize: '14px',
-                }}
-              >
-                {field.content.value}
-              </a>
-            </div>
-          </td>
-        </tr>
-      ));
+                {label.display.value && (
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      color: label.color.value,
+                      textDecoration: 'none',
+                      fontSize: label.size.value,
+                      marginRight: 5,
+                      fontWeight: label.bold.value ? 'bold' : 'normal',
+                    }}
+                  >
+                    {label.value}
+                  </span>
+                )}
+                <a
+                  href={`https://www.google.com`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: content.color.value,
+                    textDecoration: 'none',
+                    fontSize: content.size.value,
+                    fontWeight: content.bold.value ? 'bold' : 'normal',
+                  }}
+                >
+                  {content.value}
+                </a>
+              </div>
+            </td>
+          </tr>
+        );
+      });
   return (
     <table
       width="600"
@@ -180,7 +187,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                       style={{
                         fontSize: '10px',
                         minWidth: '200px',
-                        color: '#b7b5b5',
+                        color: config.fields[1].content.color.value,
                       }}
                     >
                       <label>{config.fields[1].content.value}</label>

@@ -31,15 +31,15 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       {
         label: {
           value: 'Full Name',
-          type: { editable: true, value: 'text' }, // text | icon
-          color: { editable: true, value: '#f0f000' },
-          display: { editable: true, value: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
+          // type: { editable: true, value: 'text' }, // text | icon
+          color: { editable: false, value: '#f0f000' },
+          display: { editable: false, value: true },
+          bold: { editable: false, value: false },
+          size: { editable: false, value: 12 },
         },
         content: {
           value: 'Joel Lu',
-          type: { editable: true, value: 'text' },
+          // type: { editable: true, value: 'text' }
           color: { editable: true, value: '#ff0000' },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
@@ -49,11 +49,11 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       {
         label: {
           value: 'Title',
-          type: { editable: false, value: 'text' }, // text | icon
-          color: { editable: true, value: '#f0f000' },
-          display: { editable: true, value: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
+          // type: { editable: false, value: 'text' }, // text | icon
+          color: { editable: false, value: '#f0f000' },
+          display: { editable: false, value: true },
+          bold: { editable: false, value: false },
+          size: { editable: false, value: 12 },
         },
         content: {
           value: 'Developer',

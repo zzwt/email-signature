@@ -14,7 +14,6 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
             <td style={{ padding: 0 }}>
               <div
                 style={{
-                  fontSize: '16px',
                   minWidth: '200px',
                   // color: field.label.color.value,
                 }}

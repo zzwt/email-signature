@@ -79,6 +79,20 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                 />
               </div>
             )}
+            {label.type.editable && label.display.value && (
+              <div className={styles.container_space}>
+                <div>Label Text</div>
+                <input
+                  value={label.value}
+                  onChange={(e) =>
+                    update(key, 'label', {
+                      ...label,
+                      value: e.target.value,
+                    })
+                  }
+                />
+              </div>
+            )}
             {label.color.editable && label.display.value && (
               <div className={styles.container_space}>
                 <ColorPicker
@@ -98,7 +112,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                   label="Font Size"
                   min={8}
                   max={25}
-                  initialValue={10}
+                  initialValue={label.size.value}
                   onChange={(val) => {
                     update(key, 'label', {
                       ...label,
@@ -150,7 +164,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                 label="Font Size"
                 min={8}
                 max={25}
-                initialValue={10}
+                initialValue={label.size.value}
                 onChange={(val) => {
                   update(key, 'content', {
                     ...content,

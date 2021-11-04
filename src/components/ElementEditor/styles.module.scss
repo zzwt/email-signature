@@ -61,6 +61,14 @@
         color: $theme-400;
         font-weight: $font-weight-bold;
       }
+      input {
+        border: none;
+        width: 100%;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        outline: none;
+      }
     }
     .field_more_content {
       // position: relative;

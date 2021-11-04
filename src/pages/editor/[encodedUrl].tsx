@@ -19,7 +19,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       {
         label: {
           value: 'Full Name',
-          // type: { editable: true, value: 'text' }, // text | icon
+          type: { editable: false, value: 'text' }, // text | icon: not supported
           color: { editable: false, value: '#626262' },
           display: { editable: false, value: true },
           bold: { editable: false, value: false },
@@ -27,7 +27,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         },
         content: {
           value: 'Joel Lu',
-          // type: { editable: true, value: 'text' }
+          type: { editable: true, value: 'text' },
           color: { editable: true, value: '#626262' },
           bold: { editable: true, value: true },
           size: { editable: true, value: 20 },
@@ -37,7 +37,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       {
         label: {
           value: 'Title',
-          // type: { editable: false, value: 'text' }, // text | icon
+          type: { editable: false, value: 'text' }, // text | icon
           color: { editable: false, value: '#626262' },
           display: { editable: false, value: true },
           bold: { editable: false, value: false },

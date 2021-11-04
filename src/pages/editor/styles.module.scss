@@ -1,0 +1,42 @@
+@import '../../styles/_variable.scss';
+
+.container {
+  display: flex;
+  height: 100vh;
+  min-width: calc(1190px + 7vw);
+}
+.left {
+  width: 65%;
+  background: $theme-100;
+}
+.right {
+  width: 35%;
+  background: $theme-400;
+}
+.editor_wrapper {
+  position: relative;
+  display: flex;
+  background: $white;
+  width: clamp(950px, 100%, 1700px);
+  margin-left: auto;
+  margin-right: 0;
+  right: -7vw;
+  // left: calc(10% + 100px);
+  top: calc(50% - 37.5vh);
+  // don't use this property as it will break cover layer to stay relative to parent element instead of viewport
+  // transform: translateY(-50%);
+  height: 75vh;
+  border-radius: 20px;
+  .preview {
+    width: 450px;
+    background: $theme-300;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .editor {
+    position: relative;
+    width: calc(100% - 450px);
+    display: flex;
+    flex-direction: column;
+  }
+}

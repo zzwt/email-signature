@@ -1,0 +1,53 @@
+@import '../../styles/_variable.scss';
+
+.small_react_colorful {
+  width: 120px !important;
+  height: 120px !important;
+  cursor: pointer !important;
+}
+.small-react-colorful__hue {
+  height: 20px;
+}
+
+.container {
+  position: relative;
+
+  .display_color {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 7px;
+  }
+
+  .color_picker {
+    position: absolute;
+    z-index: 2;
+    top: -250%;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input {
+    width: 70px;
+    text-transform: uppercase;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 6px;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .cover {
+    position: fixed;
+    top: 0;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+}

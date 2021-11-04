@@ -1,0 +1,10 @@
+@import '../../styles/_variable.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}

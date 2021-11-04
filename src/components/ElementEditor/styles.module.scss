@@ -1,0 +1,96 @@
+@import '../../styles/_variable.scss';
+
+.field_container {
+  width: 80%;
+  min-width: 350px;
+  border-radius: 5px;
+  border: 2px solid $theme-300;
+  .basic {
+    width: 100%;
+    display: flex;
+    height: 30px;
+    label {
+      width: 170px;
+      // display: inline-block;
+      // display: flex;
+      flex-shrink: 0;
+      text-align: center;
+      background: $theme-100;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      line-height: 30px;
+    }
+    label.toggler_open {
+      border-bottom-left-radius: 0;
+    }
+    .content {
+      position: relative;
+      flex-grow: 1;
+      input {
+        width: 100%;
+        height: 100%;
+        padding-left: 10px;
+        // line-height: 30px;
+        border: none;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        outline: none;
+      }
+      input.toggler_open {
+        border-bottom-right-radius: 0;
+      }
+      .toggler {
+        position: absolute;
+        display: inline-block;
+        right: 10px;
+        top: 5px;
+      }
+    }
+  }
+  .field_more {
+    border-top: 2px solid $theme-300;
+    display: flex;
+    width: 100%;
+    .field_more_label {
+      width: 170px;
+      // flex-shrink: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      &_heading {
+        color: $theme-400;
+        font-weight: $font-weight-bold;
+      }
+    }
+    .field_more_content {
+      // position: relative;
+      flex-shrink: 1;
+      flex-grow: 1;
+      background: $white;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      &_heading {
+        color: $theme-400;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}
+
+.input_field_editor {
+  width: 150px;
+  input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid $grey-500;
+    outline: none;
+    padding: 5px 0;
+    // border-radius: 7px;
+    background: none;
+  }
+}
+
+.container_space {
+  margin-top: 15px;
+}

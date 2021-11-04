@@ -9,14 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "antd": "^4.16.13",
+    "axios": "^0.23.0",
+    "classnames": "^2.3.1",
+    "csstype": "^3.0.9",
+    "lodash": "^4.17.21",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-color": "^2.19.3",
+    "react-colorful": "^5.5.0",
+    "react-dom": "17.0.2",
+    "sass": "^1.43.4"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.176",
     "@types/react": "17.0.31",
-    "eslint": "8.0.1",
+    "@types/react-color": "^3.0.6",
+    "@types/react-dom": "^17.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "typescript": "4.4.4"
   }
 }

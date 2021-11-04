@@ -1,0 +1,17 @@
+@import '../../styles/_variable.scss';
+
+.container {
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+  span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+.container_slider {
+  width: 150px;
+}

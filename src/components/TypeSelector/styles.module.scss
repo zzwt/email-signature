@@ -1,0 +1,37 @@
+@import '../../styles/_variable.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+.btn {
+  padding: 2px 12px;
+  // font-weight: 5px;
+  // color: $theme-300;
+  color: $white;
+  border-radius: 10px;
+  cursor: pointer;
+  background: $grey-500;
+  // &:hover,
+  // &:focus {
+  //   background: lighten($theme-300, 20%);
+  // }
+}
+.btn + .btn {
+  margin-left: 5px;
+}
+
+.btn_active {
+  background: $theme-300;
+  color: $white;
+}
+
+.container_selection {
+  margin-top: 15px;
+  // height: 20px;
+}

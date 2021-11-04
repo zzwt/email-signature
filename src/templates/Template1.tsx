@@ -9,6 +9,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
       .filter((_: any, i: number) => i > 1)
       .map((field: any, index: number) => {
         const { label, content } = field;
+        let link;
         return (
           <tr key={index}>
             <td style={{ padding: 0 }}>
@@ -32,19 +33,33 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                     {label.value}
                   </span>
                 )}
-                <a
-                  href={`https://www.google.com`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    color: content.color.value,
-                    textDecoration: 'none',
-                    fontSize: content.size.value,
-                    fontWeight: content.bold.value ? 'bold' : 'normal',
-                  }}
-                >
-                  {content.value}
-                </a>
+                {content.type.value === 'text' ? (
+                  <span
+                    style={{
+                      color: content.color.value,
+                      fontSize: content.size.value,
+                      fontWeight: content.bold.value ? 'bold' : 'normal',
+                    }}
+                  >
+                    {content.value}
+                  </span>
+                ) : (
+                  <a
+                    href={`${content.type.value === 'email' ? 'mailto:' : ''}${
+                      content.value
+                    }`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: content.color.value,
+                      textDecoration: 'underline',
+                      fontSize: content.size.value,
+                      fontWeight: content.bold.value ? 'bold' : 'normal',
+                    }}
+                  >
+                    {content.value}
+                  </a>
+                )}
               </div>
             </td>
           </tr>

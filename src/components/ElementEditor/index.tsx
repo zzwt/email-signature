@@ -141,50 +141,63 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             <label className={styles.field_more_content_heading}>
               Content Settings
             </label>
-            <div className={styles.container_space}>
-              <TypeSelector
-                label="Type"
-                options={['Text', 'Link', 'Email']}
-                onChange={() => {}}
-              />
-            </div>
-            <div className={styles.container_space}>
-              <ColorPicker
-                initialColor={content.color.value}
-                onColorChange={(color) => {
-                  update(key, 'content', {
-                    ...content,
-                    color: { ...content.color, value: color },
-                  });
-                }}
-              />
-            </div>
-            <div className={styles.container_space}>
-              <Slider
-                label="Font Size"
-                min={8}
-                max={25}
-                initialValue={label.size.value}
-                onChange={(val) => {
-                  update(key, 'content', {
-                    ...content,
-                    size: { ...content.size, value: val },
-                  });
-                }}
-              />
-            </div>
-            <div className={styles.container_space}>
-              <Toggler
-                label="Bold"
-                checked={content.bold.value}
-                onChange={(val) => {
-                  update(key, 'content', {
-                    ...content,
-                    bold: { ...content.bold, value: val },
-                  });
-                }}
-              />
-            </div>
+            {content.type.editable && (
+              <div className={styles.container_space}>
+                <TypeSelector
+                  label="Type"
+                  options={['Text', 'Link', 'Email']}
+                  onChange={(val) => {
+                    update(key, 'content', {
+                      ...content,
+                      type: { ...content.type, value: val.toLowerCase() },
+                    });
+                  }}
+                />
+              </div>
+            )}
+            {content.color.editable && (
+              <div className={styles.container_space}>
+                <ColorPicker
+                  initialColor={content.color.value}
+                  onColorChange={(color) => {
+                    update(key, 'content', {
+                      ...content,
+                      color: { ...content.color, value: color },
+                    });
+                  }}
+                />
+              </div>
+            )}
+            {content.size.editable && (
+              <div className={styles.container_space}>
+                <Slider
+                  label="Font Size"
+                  min={8}
+                  max={25}
+                  initialValue={label.size.value}
+                  onChange={(val) => {
+                    update(key, 'content', {
+                      ...content,
+                      size: { ...content.size, value: val },
+                    });
+                  }}
+                />
+              </div>
+            )}
+            {content.bold.editable && (
+              <div className={styles.container_space}>
+                <Toggler
+                  label="Bold"
+                  checked={content.bold.value}
+                  onChange={(val) => {
+                    update(key, 'content', {
+                      ...content,
+                      bold: { ...content.bold, value: val },
+                    });
+                  }}
+                />
+              </div>
+            )}
           </div>
         </div>
       )}

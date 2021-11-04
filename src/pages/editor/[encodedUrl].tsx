@@ -27,7 +27,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         },
         content: {
           value: 'Joel Lu',
-          type: { editable: true, value: 'text' },
+          type: { editable: false, value: 'text' },
           color: { editable: true, value: '#626262' },
           bold: { editable: true, value: true },
           size: { editable: true, value: 20 },
@@ -45,7 +45,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         },
         content: {
           value: 'Developer',
-          type: { editable: true, value: 'text' },
+          type: { editable: false, value: 'text' },
           color: { editable: true, value: '#626262' },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },

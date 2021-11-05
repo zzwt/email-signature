@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Data } from '../api/hello';
 import { useConfig } from '../../hooks/useConfig';
 import Editor from '../../components/Editor';
-import { TemplateProps, ElementType } from '../../types';
+import { TemplateProps, ElementType, ContentType } from '../../types';
 import styles from './styles.module.scss';
 import Wizard from '../../components/Wizard';
 
@@ -27,7 +27,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         },
         content: {
           value: 'Joel Lu',
-          type: { editable: false, value: 'text' },
+          type: { editable: false, value: ContentType.TEXT },
           color: { editable: true, value: '#626262' },
           bold: { editable: true, value: true },
           size: { editable: true, value: 20 },
@@ -45,7 +45,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         },
         content: {
           value: 'Developer',
-          type: { editable: false, value: 'text' },
+          type: { editable: false, value: ContentType.TEXT },
           color: { editable: true, value: '#626262' },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
@@ -63,7 +63,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         },
         content: {
           value: 'www.google.com',
-          type: { editable: true, value: 'text' },
+          type: { editable: true, value: ContentType.TEXT },
           color: { editable: true, value: '#626262' },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
@@ -81,7 +81,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         },
         content: {
           value: '0333333333',
-          type: { editable: true, value: 'text' },
+          type: { editable: true, value: ContentType.TEXT },
           color: { editable: true, value: '#626262' },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
@@ -97,7 +97,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       },
     ],
   };
-  const [config, changeBasicInfo, changeFields] = useConfig(defaultConfig);
+  const [config, setDefaultFields, changeFields] = useConfig(defaultConfig);
 
   return (
     <div className={styles.container}>
@@ -116,7 +116,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
                 component={
                   <Editor
                     config={config}
-                    changeBasicInfo={changeBasicInfo}
+                    setDefaultFields={setDefaultFields}
                     changeFields={changeFields}
                   />
                 }

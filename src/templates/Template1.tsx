@@ -1,7 +1,7 @@
 import React from 'react';
 import avatar from '../../public/avatar-1634807028724.PNG';
 import Image from 'next/image';
-import { TemplateProps } from '../types';
+import { ContentType, TemplateProps } from '../types';
 
 const Template1: React.FC<TemplateProps> = ({ config }) => {
   const renderFields = () =>
@@ -33,7 +33,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                     {label.value}
                   </span>
                 )}
-                {content.type.value === 'text' ? (
+                {content.type.value === ContentType.TEXT ? (
                   <span
                     style={{
                       color: content.color.value,
@@ -45,9 +45,9 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                   </span>
                 ) : (
                   <a
-                    href={`${content.type.value === 'email' ? 'mailto:' : ''}${
-                      content.value
-                    }`}
+                    href={`${
+                      content.type.value === ContentType.EMAIL ? 'mailto:' : ''
+                    }${content.value}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

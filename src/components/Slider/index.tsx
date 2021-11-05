@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 // import classNames from 'classnames';
 interface SliderProps {
   label: string;
-  initialValue: number;
+  value: number;
   min: number;
   max: number;
   onChange: (value: number) => void;
@@ -13,13 +13,11 @@ interface SliderProps {
 
 const Slider: React.FC<SliderProps> = ({
   label,
-  initialValue,
+  value,
   min,
   max,
   onChange,
 }) => {
-  const [value, setValue] = useState(initialValue);
-
   return (
     <>
       <div className={styles.container}>
@@ -33,7 +31,6 @@ const Slider: React.FC<SliderProps> = ({
           max={max}
           value={value}
           onChange={(val: number) => {
-            setValue(val);
             onChange(val);
           }}
         />

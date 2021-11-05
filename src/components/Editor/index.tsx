@@ -4,7 +4,7 @@ import { TemplateProps } from '../../types';
 import styles from './styles.module.scss';
 
 interface EditorProps extends TemplateProps {
-  // changeBasicInfo: (field: 'name' | 'title', newName: any) => void;
+  setDefaultFields: () => void;
   changeFields: (
     index: number,
     key: 'label' | 'content',
@@ -14,17 +14,16 @@ interface EditorProps extends TemplateProps {
 
 const Editor: React.FC<EditorProps> = ({
   config,
-  changeBasicInfo,
+  setDefaultFields,
   changeFields,
 }) => {
-  const [modalOpen, setModalOpen] = useState(false);
-
   const renderFieldEditors = () =>
     config.fields.map((field: any) => (
       <ElementEditor
         key={field.key}
         elementConfig={field}
         update={changeFields}
+        setDefaultFields={setDefaultFields}
       />
     ));
 

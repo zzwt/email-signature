@@ -10,3 +10,9 @@ export enum ElementType {
   FIELD = 'field',
   SOCIAL = 'social',
 }
+
+export enum ContentType {
+  TEXT = 'Text',
+  LINK = 'Link',
+  EMAIL = 'Email',
+}

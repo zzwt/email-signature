@@ -1,39 +1,38 @@
-import React, { useState } from 'react';
-import { Switch } from 'antd';
-import styles from './styles.module.scss';
+import React, { PropsWithChildren } from 'react';
 import classNames from 'classnames';
+import styles from './styles.module.scss';
+import { ContentType } from '../../types';
+
 interface TypeSelectorProps {
   label: string;
-  options: string[];
+  // options: string[];
+  active: string;
+  type: { [key: string]: string };
   onChange?: (value: string) => void | null;
   renderProps?: (selection: string) => React.ReactNode | null;
 }
 
 const TypeSelector: React.FC<TypeSelectorProps> = ({
   label,
-  options,
+  active,
+  type,
   onChange,
   renderProps,
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   const renderOptions = () =>
-    options.map((option: string, i: number) => (
-      // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    Object.values(type).map((option: string, i: number) => (
       <div
         key={i}
         className={classNames(styles.btn, {
-          [styles.btn_active]: i === activeIndex,
+          [styles.btn_active]: option === active,
         })}
         onClick={() => {
-          setActiveIndex(i);
-          onChange && onChange(options[i]);
+          onChange && onChange(option);
         }}
       >
         {option}
       </div>
     ));
-
   return (
     <>
       <div className={styles.container}>
@@ -41,9 +40,7 @@ const TypeSelector: React.FC<TypeSelectorProps> = ({
         {renderOptions()}
       </div>
       {renderProps && (
-        <div className={styles.container_selection}>
-          {renderProps(options[activeIndex])}
-        </div>
+        <div className={styles.container_selection}>{renderProps(active)}</div>
       )}
     </>
   );

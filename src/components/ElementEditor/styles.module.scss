@@ -57,18 +57,15 @@
       display: flex;
       flex-direction: column;
       padding: 10px;
-      &_heading {
-        color: $theme-400;
-        font-weight: $font-weight-bold;
-      }
-      input {
-        border: none;
-        width: 100%;
-        padding: 5px 10px;
-        border-radius: 5px;
-        margin-top: 10px;
-        outline: none;
-      }
+
+      // input {
+      //   border: none;
+      //   width: 100%;
+      //   padding: 5px 10px;
+      //   border-radius: 5px;
+      //   margin-top: 10px;
+      //   outline: none;
+      // }
     }
     .field_more_content {
       // position: relative;
@@ -78,27 +75,44 @@
       display: flex;
       flex-direction: column;
       padding: 10px;
-      &_heading {
-        color: $theme-400;
-        font-weight: $font-weight-bold;
+      // &_heading {
+      //   color: $theme-400;
+      //   font-weight: $font-weight-bold;
+      //   margin-bottom: 10px;
+      //   display: flex;
+      //   justify-content: space-between;
+      // }
+      &_default {
+        display: flex;
+        justify-content: flex-end;
       }
     }
-  }
-}
-
-.input_field_editor {
-  width: 150px;
-  input {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid $grey-500;
-    outline: none;
-    padding: 5px 0;
-    // border-radius: 7px;
-    background: none;
+    &_heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $theme-400;
+      font-weight: $font-weight-bold;
+      margin-bottom: 10px;
+      height: 25px;
+    }
   }
 }
 
 .container_space {
   margin-top: 15px;
+}
+
+.btn {
+  padding: 2px 12px;
+  // font-weight: 5px;
+  // color: $theme-300;
+  color: $white;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background: $theme-200;
+  &:hover {
+    background: lighten($theme-200, 10%);
+  }
 }

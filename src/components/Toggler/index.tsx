@@ -15,6 +15,7 @@ const Toggler: React.FC<TogglerProps> = ({ label, checked, onChange }) => (
       checkedChildren="Yes"
       unCheckedChildren="No"
       defaultChecked={checked}
+      checked={checked}
       onChange={onChange}
     />
   </div>

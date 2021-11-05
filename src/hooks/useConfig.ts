@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 export const useConfig = (defaultConfig: any) => {
   const [config, setConfig] = useState(defaultConfig);
 
-  const changeBasicInfo = (field: 'name' | 'title', newVal: any): void => {
-    setConfig({ ...config, [field]: { ...config[field], ...newVal } });
+  const setDefaultFields = (index: number) => {
+    const newField = defaultConfig.fields[index];
+    const newFields = config.fields.map((field: any, i: number) =>
+      index === i ? newField : field
+    );
+
+    setConfig({ ...config, fields: newFields });
   };
 
   const changeFields = (
@@ -20,5 +25,5 @@ export const useConfig = (defaultConfig: any) => {
     setConfig({ ...config, fields: newFields });
   };
 
-  return [config, changeBasicInfo, changeFields] as const;
+  return [config, setDefaultFields, changeFields] as const;
 };

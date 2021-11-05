@@ -3,16 +3,13 @@ import { HexColorInput, HexColorPicker } from 'react-colorful';
 import styles from './styles.module.scss';
 
 interface ColorPickerProps {
-  initialColor: string;
+  color: string;
   onColorChange: (value: string) => void;
 }
 
-const ColorPicker: React.FC<ColorPickerProps> = ({
-  initialColor,
-  onColorChange,
-}) => {
+const ColorPicker: React.FC<ColorPickerProps> = ({ color, onColorChange }) => {
   const [toggleColorPicker, setToggleColorPicker] = useState(false);
-  const [pickerColor, setPickerColor] = useState(initialColor);
+  // const [pickerColor, setPickerColor] = useState(initialColor);
 
   const handleClose = () => {
     setToggleColorPicker(false);
@@ -23,29 +20,26 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
       <span style={{ verticalAlign: 'middle' }}>Color</span>
       <span
         style={{
-          background: pickerColor,
+          background: color,
         }}
         className={styles.display_color}
         onClick={() => {
-          console.log('clocked');
           setToggleColorPicker(!toggleColorPicker);
         }}
       ></span>
       {toggleColorPicker && (
         <div className={styles.color_picker}>
           <HexColorPicker
-            color={pickerColor}
-            onChange={(color) => {
-              setPickerColor(color);
-              onColorChange(color);
+            color={color}
+            onChange={(newColor: string) => {
+              onColorChange(newColor);
             }}
             className={styles.small_react_colorful}
           />
           <HexColorInput
-            color={pickerColor}
-            onChange={(color: string) => {
-              setPickerColor(color);
-              onColorChange(color);
+            color={color}
+            onChange={(newColor: string) => {
+              onColorChange(newColor);
             }}
           />
         </div>

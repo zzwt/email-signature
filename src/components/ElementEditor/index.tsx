@@ -4,16 +4,20 @@ import { CgMoreO } from '@react-icons/all-files/cg/CgMoreO';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 import ColorPicker from '../ColorPicker';
-import { IconPicker } from '../IconPicker';
 import Toggler from '../Toggler';
 import TypeSelector from '../TypeSelector';
 import Slider from '../Slider';
+import { ContentType } from '../../types';
+import Input from './../Input/index';
+
 interface ElementEditorProps {
+  setDefaultFields: () => void;
   elementConfig: any;
   update: any;
   key?: number;
 }
 const ElementEditor: React.FC<ElementEditorProps> = ({
+  setDefaultFields,
   elementConfig,
   update,
 }) => {
@@ -36,7 +40,6 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
       ),
     [toggleMore]
   );
-
   return (
     <div className={styles.field_container}>
       <div className={styles.basic}>
@@ -62,9 +65,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
       {toggleMore && (
         <div className={styles.field_more}>
           <div className={styles.field_more_label}>
-            <label className={styles.field_more_label_heading}>
-              Label Settings
-            </label>
+            <div className={styles.field_more_heading}>Label Settings</div>
             {label.display.editable && (
               <div className={styles.container_space}>
                 <Toggler
@@ -81,7 +82,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             )}
             {label.type.editable && label.display.value && (
               <div className={styles.container_space}>
-                <div>Label Text</div>
+                {/* <div>Label Text</div>
                 <input
                   value={label.value}
                   onChange={(e) =>
@@ -90,13 +91,23 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                       value: e.target.value,
                     })
                   }
+                /> */}
+                <Input
+                  label="Label"
+                  value={label.value}
+                  onChange={(val) =>
+                    update(key, 'label', {
+                      ...label,
+                      value: val,
+                    })
+                  }
                 />
               </div>
             )}
             {label.color.editable && label.display.value && (
               <div className={styles.container_space}>
                 <ColorPicker
-                  initialColor={label.color.value}
+                  color={label.color.value}
                   onColorChange={(color) => {
                     update(key, 'label', {
                       ...label,
@@ -112,7 +123,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                   label="Font Size"
                   min={8}
                   max={25}
-                  initialValue={label.size.value}
+                  value={label.size.value}
                   onChange={(val) => {
                     update(key, 'label', {
                       ...label,
@@ -138,18 +149,27 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             )}
           </div>
           <div className={styles.field_more_content}>
-            <label className={styles.field_more_content_heading}>
-              Content Settings
-            </label>
+            <div className={styles.field_more_heading}>
+              <span>Content Settings</span>
+              <button
+                className={styles.btn}
+                onClick={() => setDefaultFields(key)}
+              >
+                Set Default
+              </button>
+            </div>
+
             {content.type.editable && (
               <div className={styles.container_space}>
                 <TypeSelector
                   label="Type"
-                  options={['Text', 'Link', 'Email']}
+                  // options={['Text', 'Link', 'Email']}
+                  type={ContentType}
+                  active={content.type.value}
                   onChange={(val) => {
                     update(key, 'content', {
                       ...content,
-                      type: { ...content.type, value: val.toLowerCase() },
+                      type: { ...content.type, value: val },
                     });
                   }}
                 />
@@ -158,7 +178,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             {content.color.editable && (
               <div className={styles.container_space}>
                 <ColorPicker
-                  initialColor={content.color.value}
+                  color={content.color.value}
                   onColorChange={(color) => {
                     update(key, 'content', {
                       ...content,
@@ -174,7 +194,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                   label="Font Size"
                   min={8}
                   max={25}
-                  initialValue={label.size.value}
+                  value={content.size.value}
                   onChange={(val) => {
                     update(key, 'content', {
                       ...content,
@@ -198,6 +218,14 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                 />
               </div>
             )}
+            {/* <div
+              className={classNames(
+                styles.container_space,
+                styles.field_more_content_default
+              )}
+            >
+              
+            </div> */}
           </div>
         </div>
       )}

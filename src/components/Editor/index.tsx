@@ -4,7 +4,7 @@ import { TemplateProps } from '../../types';
 import styles from './styles.module.scss';
 
 interface EditorProps extends TemplateProps {
-  setDefaultFields: () => void;
+  setDefaultFields: (index: number) => void;
   changeFields: (
     index: number,
     key: 'label' | 'content',

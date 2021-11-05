@@ -11,7 +11,7 @@ import { ContentType } from '../../types';
 import Input from './../Input/index';
 
 interface ElementEditorProps {
-  setDefaultFields: () => void;
+  setDefaultFields: (index: number) => void;
   elementConfig: any;
   update: any;
   key?: number;
@@ -82,16 +82,6 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             )}
             {label.type.editable && label.display.value && (
               <div className={styles.container_space}>
-                {/* <div>Label Text</div>
-                <input
-                  value={label.value}
-                  onChange={(e) =>
-                    update(key, 'label', {
-                      ...label,
-                      value: e.target.value,
-                    })
-                  }
-                /> */}
                 <Input
                   label="Label"
                   value={label.value}

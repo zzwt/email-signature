@@ -2,7 +2,8 @@ import React from 'react';
 import avatar from '../../public/avatar-1634807028724.PNG';
 import Image from 'next/image';
 import { ContentType, TemplateProps } from '../types';
-
+import { IconType, iconMapping } from '../components/SocialIcons';
+import { normalizeLink, stripLinkProtocol } from '../utils';
 const Template1: React.FC<TemplateProps> = ({ config }) => {
   const renderFields = () =>
     config.fields
@@ -45,9 +46,11 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                   </span>
                 ) : (
                   <a
-                    href={`${
-                      content.type.value === ContentType.EMAIL ? 'mailto:' : ''
-                    }${content.value}`}
+                    href={
+                      content.type.value === ContentType.EMAIL
+                        ? `mailto:${content.value}`
+                        : normalizeLink(content.value)
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -57,7 +60,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                       fontWeight: content.bold.value ? 'bold' : 'normal',
                     }}
                   >
-                    {content.value}
+                    {stripLinkProtocol(content.value)}
                   </a>
                 )}
               </div>
@@ -65,6 +68,35 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
           </tr>
         );
       });
+
+  const renderSocialIcons = () =>
+    config.social.map((socialIcon: any, index: number) => {
+      const Icon = iconMapping[socialIcon.icon];
+      return (
+        <a
+          // eslint-disable-next-line react/no-array-index-key
+          key={index}
+          style={{
+            display: 'inline-flex',
+            background: socialIcon.color,
+            color: 'white',
+            width: 20,
+            height: 20,
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: '50%',
+            marginRight: 5,
+            fontSize: 11,
+          }}
+          href={normalizeLink(socialIcon.link)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon />
+        </a>
+      );
+    });
+
   return (
     <table
       // width="600"
@@ -215,6 +247,18 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                 </tr>
                 {/* Website */}
                 {renderFields()}
+                {/* Social Icons */}
+                <tr>
+                  <td style={{ padding: 0 }}>
+                    <div
+                      style={{
+                        marginTop: 2,
+                      }}
+                    >
+                      {renderSocialIcons()}
+                    </div>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </td>

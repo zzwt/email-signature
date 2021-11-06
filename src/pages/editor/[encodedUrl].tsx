@@ -8,6 +8,7 @@ import Editor from '../../components/Editor';
 import { TemplateProps, ElementType, ContentType } from '../../types';
 import styles from './styles.module.scss';
 import Wizard from '../../components/Wizard';
+import SocialEditor from '../../components/SocialEditor';
 
 const EditorPage: React.FC<Data> = ({ template }) => {
   const Component = useMemo(
@@ -91,13 +92,27 @@ const EditorPage: React.FC<Data> = ({ template }) => {
     ],
     social: [
       {
-        icon: 'fb',
-        link: 'xxx.com',
+        icon: 'ImFacebook',
+        link: 'http://xxx1.com',
+        color: 'red',
+        // type: ElementType.SOCIAL,
+      },
+      {
+        icon: 'FaTwitter',
+        link: 'http://xxx2.com',
+        color: 'red',
+        // type: ElementType.SOCIAL,
+      },
+      {
+        icon: 'FaLinkedinIn',
+        link: 'xxx3.com',
+        color: 'red',
         // type: ElementType.SOCIAL,
       },
     ],
   };
-  const [config, setDefaultFields, changeFields] = useConfig(defaultConfig);
+  const [config, setDefaultFields, changeFields, changeSocial] =
+    useConfig(defaultConfig);
 
   return (
     <div className={styles.container}>
@@ -126,10 +141,11 @@ const EditorPage: React.FC<Data> = ({ template }) => {
                 subTitle="Edit and add your favourite social media link"
                 description="Customize your social link"
                 component={
-                  <Editor
-                    config={config}
-                    // changeBasicInfo={changeBasicInfo}
-                    changeFields={changeFields}
+                  <SocialEditor
+                    socialIcons={config.social}
+                    // setDefaultFields={setDefaultFields}
+                    // changeFields={changeFields}
+                    changeSocial={changeSocial}
                   />
                 }
               />

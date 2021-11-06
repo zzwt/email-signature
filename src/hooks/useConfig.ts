@@ -25,5 +25,25 @@ export const useConfig = (defaultConfig: any) => {
     setConfig({ ...config, fields: newFields });
   };
 
-  return [config, setDefaultFields, changeFields] as const;
+  const changeSocial = (index: number = -1, newVal: any, op: number = 0) => {
+    if (op === 1) {
+      if (newVal) {
+        setConfig({ ...config, social: [...config.social, newVal] });
+      }
+      return;
+    }
+    if (op === -1) {
+      if (index >= 0 && index < config.social.length) {
+        config.social.splice(index, 1);
+        setConfig({ ...config, social: [...config.social] });
+      }
+      return;
+    }
+    const newSocial = config.social.map((sc: any, i: number) =>
+      index === i ? newVal : sc
+    );
+    setConfig({ ...config, social: newSocial });
+  };
+
+  return [config, setDefaultFields, changeFields, changeSocial] as const;
 };

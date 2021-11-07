@@ -99,16 +99,23 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
           >
             <Icon />
             {activeSocial === index && (
-              <AiFillMinusCircle
-                className={styles.delete}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (activeSocial === socialIcons.length - 1) {
-                    setActiveSocial((prev) => prev - 1);
-                  }
-                  changeSocial(activeSocial, null, -1);
-                }}
-              />
+              <>
+                <AiFillMinusCircle
+                  className={styles.delete}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (activeSocial === socialIcons.length - 1) {
+                      setActiveSocial((prev) => prev - 1);
+                    }
+                    changeSocial(activeSocial, null, -1);
+                  }}
+                  data-tip
+                  data-for="delete"
+                />
+                <ReactTooltip id="delete">
+                  <span>Delete Icon</span>
+                </ReactTooltip>
+              </>
             )}
           </div>
           {activeSocial === index && (

@@ -2,21 +2,26 @@ import React, { useState, useCallback } from 'react';
 import { AiFillMinusCircle } from '@react-icons/all-files/ai/AiFillMinusCircle';
 import { IoAddCircle } from '@react-icons/all-files/io5/IoAddCircle';
 import { BiColorFill } from '@react-icons/all-files/bi/BiColorFill';
+import { RiExchangeFill } from '@react-icons/all-files/ri/RiExchangeFill';
+
 import classNames from 'classnames';
 import styles from './styles.module.scss';
-import { SocialIcons, iconMapping, iconList, IconType } from '../SocialIcons';
+import { SocialIcons, iconMapping, iconList } from '../SocialIcons';
 import ColorPicker from '../ColorPicker';
+import { IconDisplayType } from '../../types';
 
 interface SocialEditorProps {
   meta: any;
   socialIcons: any[];
   changeSocial: (index: number, newVal: any, op: number) => void;
+  changeMeta: (key: string, val: string) => void;
 }
 
 const SocialEditor: React.FC<SocialEditorProps> = ({
   meta,
   socialIcons,
   changeSocial,
+  changeMeta,
 }) => {
   const [activeSocial, setActiveSocial] = useState(() => {
     if (socialIcons && socialIcons.length > 0) return 0;
@@ -45,18 +50,49 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
   const renderAddedSocialIcons = () =>
     socialIcons.map((socialIcon: any, index: number) => {
       const Icon = iconMapping[socialIcon.icon];
-      const background =
-        activeSocial === index && socialIcon.color ? socialIcon.color : '';
+      const dynamicStyle = () => {
+        if (activeSocial !== index) return {};
+
+        if (meta.socialIconType === IconDisplayType.FILL) {
+          return {
+            background: socialIcon.color ? socialIcon.color : meta.primary,
+          };
+        }
+        if (meta.socialIconType === IconDisplayType.LINE) {
+          return {
+            color: socialIcon.color ? socialIcon.color : meta.primary,
+          };
+        }
+        if (meta.socialIconType === IconDisplayType.OUTLINE) {
+          return {
+            color: socialIcon.color ? socialIcon.color : meta.primary,
+            border: `2px solid ${
+              socialIcon.color ? socialIcon.color : meta.primary
+            }`,
+          };
+        }
+        return {};
+      };
+
+      const iconDisplayClassname = () => {
+        if (meta.socialIconType === IconDisplayType.FILL) {
+          return classNames(styles.added_icon, styles.added_icon_fill);
+        }
+        if (meta.socialIconType === IconDisplayType.LINE) {
+          return classNames(styles.added_icon, styles.added_icon_line);
+        }
+        if (meta.socialIconType === IconDisplayType.OUTLINE) {
+          return classNames(styles.added_icon, styles.added_icon_outline);
+        }
+        return '';
+      };
+
       return (
         // eslint-disable-next-line react/no-array-index-key
         <div className={styles.added_icon_container} key={index}>
           <div
-            className={classNames(styles.added_icon, {
-              [styles.added_icon_active]: activeSocial === index,
-            })}
-            style={{
-              background,
-            }}
+            className={iconDisplayClassname()}
+            style={dynamicStyle()}
             onClick={() => {
               setActiveSocial(index);
             }}
@@ -120,12 +156,25 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
           />
         )}
         {activeSocial >= 0 && (
-          <BiColorFill
-            className={styles.palette}
-            onClick={() => {
-              setToggleColorPicker(!toggleColorPicker);
-            }}
-          />
+          <div>
+            <BiColorFill
+              className={styles.palette}
+              onClick={() => {
+                setToggleColorPicker(!toggleColorPicker);
+              }}
+            />
+            <RiExchangeFill
+              className={styles.change_icon_type}
+              onClick={() => {
+                let newType = IconDisplayType.LINE;
+                if (meta.socialIconType === IconDisplayType.LINE)
+                  newType = IconDisplayType.OUTLINE;
+                if (meta.socialIconType === IconDisplayType.OUTLINE)
+                  newType = IconDisplayType.FILL;
+                changeMeta('socialIconType', newType);
+              }}
+            />
+          </div>
         )}
       </div>
 

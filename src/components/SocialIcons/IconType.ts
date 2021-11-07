@@ -29,3 +29,5 @@ export type IconType =
   | 'GrSoundcloud'
   | 'FaDiscord'
   | 'SiEvernote';
+
+// export type IconDisplayType = 'Fill' | 'Line' | 'Outline';

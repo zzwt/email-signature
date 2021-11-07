@@ -5,7 +5,12 @@ import axios from 'axios';
 import { Data } from '../api/hello';
 import { useConfig } from '../../hooks/useConfig';
 import Editor from '../../components/Editor';
-import { TemplateProps, ElementType, ContentType } from '../../types';
+import {
+  TemplateProps,
+  ElementType,
+  ContentType,
+  IconDisplayType,
+} from '../../types';
 import styles from './styles.module.scss';
 import Wizard from '../../components/Wizard';
 import SocialEditor from '../../components/SocialEditor';
@@ -109,6 +114,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       primary: '#5661b6',
       background: '#ffffff',
       text: '#626262',
+      socialIconType: IconDisplayType.OUTLINE,
     },
   };
   const [config, setDefaultFields, changeFields, changeSocial, changeMeta] =
@@ -152,8 +158,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
                   <SocialEditor
                     meta={config.meta}
                     socialIcons={config.social}
-                    // setDefaultFields={setDefaultFields}
-                    // changeFields={changeFields}
+                    changeMeta={changeMeta}
                     changeSocial={changeSocial}
                   />
                 }

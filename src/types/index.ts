@@ -16,3 +16,9 @@ export enum ContentType {
   LINK = 'Link',
   EMAIL = 'Email',
 }
+
+export enum IconDisplayType {
+  FILL = 'Fill',
+  LINE = 'Line',
+  OUTLINE = 'Outline',
+}

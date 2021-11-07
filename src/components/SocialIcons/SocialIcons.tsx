@@ -8,11 +8,13 @@ import { IconType } from './IconType';
 import { iconMapping } from './iconMapping';
 
 interface SocialIconsProps {
+  color: string;
   active: IconType;
   onChange: (val: IconType) => void;
 }
 
 export const SocialIcons: React.FC<SocialIconsProps> = ({
+  color,
   active,
   onChange,
 }) => (
@@ -26,6 +28,10 @@ export const SocialIcons: React.FC<SocialIconsProps> = ({
           className={classNames(styles.icon, {
             [styles.icon_active]: active === icon,
           })}
+          style={{
+            color: active === icon ? color : '',
+            border: active === icon ? `1px solid ${color}` : '',
+          }}
           onClick={() => onChange(icon)}
         >
           <Icon />

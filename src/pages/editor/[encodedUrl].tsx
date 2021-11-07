@@ -150,6 +150,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
                 description="Customize your social link"
                 component={
                   <SocialEditor
+                    meta={config.meta}
                     socialIcons={config.social}
                     // setDefaultFields={setDefaultFields}
                     // changeFields={changeFields}

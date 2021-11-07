@@ -3,7 +3,7 @@ import { AiFillMinusCircle } from '@react-icons/all-files/ai/AiFillMinusCircle';
 import { IoAddCircle } from '@react-icons/all-files/io5/IoAddCircle';
 import { BiColorFill } from '@react-icons/all-files/bi/BiColorFill';
 import { RiExchangeFill } from '@react-icons/all-files/ri/RiExchangeFill';
-
+import ReactTooltip from 'react-tooltip';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 import { SocialIcons, iconMapping, iconList } from '../SocialIcons';
@@ -138,22 +138,29 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
       <div className={styles.added_icons_container}>
         <div className={styles.added_icons}>{renderAddedSocialIcons()}</div>
         {socialIcons.length < 5 && (
-          <IoAddCircle
-            className={styles.new_icon}
-            onClick={(e) => {
-              e.stopPropagation();
-              changeSocial(
-                -1,
-                {
-                  icon: getFirstUnusedIcon(),
-                  link: '',
-                  color: meta.primary,
-                },
-                1
-              );
-              setActiveSocial(socialIcons.length);
-            }}
-          />
+          <>
+            <IoAddCircle
+              className={styles.new_icon}
+              onClick={(e) => {
+                e.stopPropagation();
+                changeSocial(
+                  -1,
+                  {
+                    icon: getFirstUnusedIcon(),
+                    link: '',
+                    color: meta.primary,
+                  },
+                  1
+                );
+                setActiveSocial(socialIcons.length);
+              }}
+              data-tip
+              data-for="addNew"
+            />
+            <ReactTooltip id="addNew">
+              <span>Add New</span>
+            </ReactTooltip>
+          </>
         )}
         {activeSocial >= 0 && (
           <div>
@@ -162,7 +169,12 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
               onClick={() => {
                 setToggleColorPicker(!toggleColorPicker);
               }}
+              data-tip
+              data-for="changeColor"
             />
+            <ReactTooltip id="changeColor" type="dark">
+              <span>Change Color</span>
+            </ReactTooltip>
             <RiExchangeFill
               className={styles.change_icon_type}
               onClick={() => {
@@ -173,7 +185,12 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
                   newType = IconDisplayType.FILL;
                 changeMeta('socialIconType', newType);
               }}
+              data-tip
+              data-for="changeStyle"
             />
+            <ReactTooltip id="changeStyle">
+              <span>Change Style</span>
+            </ReactTooltip>
           </div>
         )}
       </div>

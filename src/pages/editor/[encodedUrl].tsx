@@ -9,6 +9,7 @@ import { TemplateProps, ElementType, ContentType } from '../../types';
 import styles from './styles.module.scss';
 import Wizard from '../../components/Wizard';
 import SocialEditor from '../../components/SocialEditor';
+import ThemeColor from '../../components/ThemeColor';
 
 const EditorPage: React.FC<Data> = ({ template }) => {
   const Component = useMemo(
@@ -94,24 +95,23 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       {
         icon: 'ImFacebook',
         link: 'http://xxx1.com',
-        color: 'red',
-        // type: ElementType.SOCIAL,
       },
       {
         icon: 'FaTwitter',
         link: 'http://xxx2.com',
-        color: 'red',
-        // type: ElementType.SOCIAL,
       },
       {
         icon: 'FaLinkedinIn',
         link: 'xxx3.com',
-        color: 'red',
-        // type: ElementType.SOCIAL,
       },
     ],
+    meta: {
+      primary: '#5661b6',
+      background: '#ffffff',
+      text: '#626262',
+    },
   };
-  const [config, setDefaultFields, changeFields, changeSocial] =
+  const [config, setDefaultFields, changeFields, changeSocial, changeMeta] =
     useConfig(defaultConfig);
 
   return (
@@ -124,6 +124,14 @@ const EditorPage: React.FC<Data> = ({ template }) => {
           <div className={styles.editor}>
             {/* */}
             <Wizard>
+              <Wizard.Step
+                title="Color Tone"
+                subTitle="Choose the tone of your signature"
+                description="If you are happy with default color, go to next"
+                component={
+                  <ThemeColor config={config} changeMeta={changeMeta} />
+                }
+              />
               <Wizard.Step
                 title="Basic Info"
                 subTitle="Freely edit your fileds information"

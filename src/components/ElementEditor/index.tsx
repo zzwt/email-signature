@@ -3,7 +3,7 @@ import { BsArrowUp } from '@react-icons/all-files/bs/BsArrowUp';
 import { CgMoreO } from '@react-icons/all-files/cg/CgMoreO';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
-import ColorPicker from '../ColorPicker';
+import ColorEditor from '../ColorEditor';
 import Toggler from '../Toggler';
 import TypeSelector from '../TypeSelector';
 import Slider from '../Slider';
@@ -96,7 +96,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             )}
             {label.color.editable && label.display.value && (
               <div className={styles.container_space}>
-                <ColorPicker
+                <ColorEditor
                   color={label.color.value}
                   onColorChange={(color) => {
                     update(key, 'label', {
@@ -145,7 +145,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                 className={styles.btn}
                 onClick={() => setDefaultFields(key)}
               >
-                Set Default
+                Reset
               </button>
             </div>
 
@@ -167,7 +167,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             )}
             {content.color.editable && (
               <div className={styles.container_space}>
-                <ColorPicker
+                <ColorEditor
                   color={content.color.value}
                   onColorChange={(color) => {
                     update(key, 'content', {

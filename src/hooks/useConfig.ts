@@ -45,5 +45,15 @@ export const useConfig = (defaultConfig: any) => {
     setConfig({ ...config, social: newSocial });
   };
 
-  return [config, setDefaultFields, changeFields, changeSocial] as const;
+  const changeMeta = (key: string, val: string) => {
+    setConfig({ ...config, meta: { ...config.meta, [key]: val } });
+  };
+
+  return [
+    config,
+    setDefaultFields,
+    changeFields,
+    changeSocial,
+    changeMeta,
+  ] as const;
 };

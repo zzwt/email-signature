@@ -5,8 +5,9 @@ import { ContentType, TemplateProps } from '../types';
 import { IconType, iconMapping } from '../components/SocialIcons';
 import { normalizeLink, stripLinkProtocol } from '../utils';
 const Template1: React.FC<TemplateProps> = ({ config }) => {
+  const { fields, meta, social } = config;
   const renderFields = () =>
-    config.fields
+    fields
       .filter((_: any, i: number) => i > 1)
       .map((field: any, index: number) => {
         const { label, content } = field;
@@ -70,7 +71,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
       });
 
   const renderSocialIcons = () =>
-    config.social.map((socialIcon: any, index: number) => {
+    social.map((socialIcon: any, index: number) => {
       const Icon = iconMapping[socialIcon.icon];
       return (
         <a
@@ -78,7 +79,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
           key={index}
           style={{
             display: 'inline-flex',
-            background: socialIcon.color,
+            background: socialIcon.color ? socialIcon.color : meta.primary,
             color: 'white',
             width: 20,
             height: 20,
@@ -104,7 +105,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
       cellSpacing="0"
       cellPadding="0"
       // bgcolor="red"
-      style={{ background: 'white' }}
+      style={{ background: meta.background }}
     >
       <tbody>
         <tr>
@@ -217,15 +218,17 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                   {/* Name */}
                   <td
                     style={{
-                      fontSize: config.fields[0].content.size.value,
-                      fontWeight: config.fields[0].content.bold.value
+                      fontSize: fields[0].content.size.value,
+                      fontWeight: fields[0].content.bold.value
                         ? 'bold'
                         : 'normal',
                       display: 'block',
-                      color: config.fields[0].content.color.value,
+                      color: fields[0].content.color?.value
+                        ? fields[0].content.color?.value
+                        : meta.text,
                     }}
                   >
-                    <label>{config.fields[0].content.value}</label>
+                    <label>{fields[0].content.value}</label>
                   </td>
                 </tr>
                 {/* Title */}
@@ -233,15 +236,15 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                   <td style={{ padding: 0 }}>
                     <div
                       style={{
-                        fontSize: config.fields[1].content.size.value,
+                        fontSize: fields[1].content.size.value,
                         minWidth: '200px',
-                        fontWeight: config.fields[1].content.bold.value
+                        fontWeight: fields[1].content.bold.value
                           ? 'bold'
                           : 'normal',
-                        color: config.fields[1].content.color.value,
+                        color: fields[1].content.color.value,
                       }}
                     >
-                      <label>{config.fields[1].content.value}</label>
+                      <label>{fields[1].content.value}</label>
                     </div>
                   </td>
                 </tr>

@@ -1,11 +1,11 @@
 export type IconType =
   | 'ImFacebook'
   | 'FaTwitter'
-  | 'GrInstagram'
+  | 'FiInstagram'
   | 'FaLinkedinIn'
-  | 'GrSkype'
+  | 'ImSkype'
   | 'FaTumblr'
-  | 'GrGoogle'
+  | 'FaGoogle'
   | 'FaFacebookMessenger'
   | 'IoLogoWhatsapp'
   | 'FaQq'
@@ -19,15 +19,15 @@ export type IconType =
   | 'FaRedditAlien'
   | 'SiTiktok'
   | 'FaMicrosoft'
-  | 'GrApple'
+  | 'FaBehance'
   | 'FaWeibo'
   | 'FaTelegramPlane'
-  | 'FaSnapchatGhost'
+  | 'SiSnapchat'
   | 'FaQuora'
   | 'RiBilibiliFill'
   | 'FaPaypal'
-  | 'GrSoundcloud'
-  | 'FaDiscord'
-  | 'SiEvernote';
+  | 'FaMediumM'
+  | 'FaYelp'
+  | 'FiDribbble';
 
 // export type IconDisplayType = 'Fill' | 'Line' | 'Outline';

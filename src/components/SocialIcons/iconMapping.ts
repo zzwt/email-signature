@@ -1,10 +1,10 @@
 import { ImFacebook } from '@react-icons/all-files/im/ImFacebook';
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
-import { GrInstagram } from '@react-icons/all-files/gr/GrInstagram';
+import { FiInstagram } from '@react-icons/all-files/fi/FiInstagram';
 import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
-import { GrSkype } from '@react-icons/all-files/gr/GrSkype';
+import { ImSkype } from '@react-icons/all-files/im/ImSkype';
 import { FaTumblr } from '@react-icons/all-files/fa/FaTumblr';
-import { GrGoogle } from '@react-icons/all-files/gr/GrGoogle';
+import { FaGoogle } from '@react-icons/all-files/fa/FaGoogle';
 import { FaFacebookMessenger } from '@react-icons/all-files/fa/FaFacebookMessenger';
 import { IoLogoWhatsapp } from '@react-icons/all-files/io/IoLogoWhatsapp';
 import { FaQq } from '@react-icons/all-files/fa/FaQq';
@@ -18,16 +18,16 @@ import { FaSlackHash } from '@react-icons/all-files/fa/FaSlackHash';
 import { FaRedditAlien } from '@react-icons/all-files/fa/FaRedditAlien';
 import { SiTiktok } from '@react-icons/all-files/si/SiTiktok';
 import { FaMicrosoft } from '@react-icons/all-files/fa/FaMicrosoft';
-import { GrApple } from '@react-icons/all-files/gr/GrApple';
+import { FaBehance } from '@react-icons/all-files/fa/FaBehance';
 import { FaWeibo } from '@react-icons/all-files/fa/FaWeibo';
 import { FaTelegramPlane } from '@react-icons/all-files/fa/FaTelegramPlane';
-import { FaSnapchatGhost } from '@react-icons/all-files/fa/FaSnapchatGhost';
+import { SiSnapchat } from '@react-icons/all-files/si/SiSnapchat';
 import { FaQuora } from '@react-icons/all-files/fa/FaQuora';
 import { RiBilibiliFill } from '@react-icons/all-files/ri/RiBilibiliFill';
 import { FaPaypal } from '@react-icons/all-files/fa/FaPaypal';
-import { GrSoundcloud } from '@react-icons/all-files/gr/GrSoundcloud';
-import { FaDiscord } from '@react-icons/all-files/fa/FaDiscord';
-import { SiEvernote } from '@react-icons/all-files/si/SiEvernote';
+import { FaMediumM } from '@react-icons/all-files/fa/FaMediumM';
+import { FaYelp } from '@react-icons/all-files/fa/FaYelp';
+import { FiDribbble } from '@react-icons/all-files/fi/FiDribbble';
 import React from 'react';
 
 interface IiconMapping {
@@ -37,11 +37,11 @@ interface IiconMapping {
 export const iconMapping: IiconMapping = {
   ImFacebook,
   FaTwitter,
-  GrInstagram,
+  FiInstagram,
   FaLinkedinIn,
-  GrSkype,
+  ImSkype,
   FaTumblr,
-  GrGoogle,
+  FaGoogle,
   FaFacebookMessenger,
   IoLogoWhatsapp,
   FaQq,
@@ -55,14 +55,14 @@ export const iconMapping: IiconMapping = {
   FaRedditAlien,
   SiTiktok,
   FaMicrosoft,
-  GrApple,
+  FaBehance,
   FaWeibo,
   FaTelegramPlane,
-  FaSnapchatGhost,
+  SiSnapchat,
   FaQuora,
   RiBilibiliFill,
   FaPaypal,
-  GrSoundcloud,
-  FaDiscord,
-  SiEvernote,
+  FaMediumM,
+  FaYelp,
+  FiDribbble,
 };

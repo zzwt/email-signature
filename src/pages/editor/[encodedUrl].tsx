@@ -114,7 +114,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       primary: '#5661b6',
       background: '#ffffff',
       text: '#626262',
-      socialIconType: IconDisplayType.OUTLINE,
+      socialIconType: IconDisplayType.FILL,
     },
   };
   const [config, setDefaultFields, changeFields, changeSocial, changeMeta] =

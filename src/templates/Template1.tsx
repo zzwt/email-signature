@@ -1,7 +1,7 @@
 import React from 'react';
 import avatar from '../../public/avatar-1634807028724.PNG';
 import Image from 'next/image';
-import { ContentType, TemplateProps } from '../types';
+import { ContentType, IconDisplayType, TemplateProps } from '../types';
 import { IconType, iconMapping } from '../components/SocialIcons';
 import { normalizeLink, stripLinkProtocol } from '../utils';
 const Template1: React.FC<TemplateProps> = ({ config }) => {
@@ -11,8 +11,8 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
       .filter((_: any, i: number) => i > 1)
       .map((field: any, index: number) => {
         const { label, content } = field;
-        let link;
         return (
+          // eslint-disable-next-line react/no-array-index-key
           <tr key={index}>
             <td style={{ padding: 0 }}>
               <div
@@ -70,6 +70,50 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
         );
       });
 
+  const getSocialIconStyle = (iconColor: string | undefined) => {
+    if (meta.socialIconType === IconDisplayType.FILL) {
+      return {
+        display: 'inline-flex',
+        background: iconColor || meta.primary,
+        color: 'white',
+        width: 20,
+        height: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: '50%',
+        marginRight: 5,
+        fontSize: 11,
+      };
+    }
+    if (meta.socialIconType === IconDisplayType.LINE) {
+      return {
+        display: 'inline-flex',
+        color: iconColor || meta.primary,
+        width: 20,
+        height: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: '50%',
+        fontSize: 14,
+      };
+    }
+    if (meta.socialIconType === IconDisplayType.OUTLINE) {
+      return {
+        display: 'inline-flex',
+        color: iconColor || meta.primary,
+        width: 20,
+        height: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: '50%',
+        marginRight: 3,
+        fontSize: 11,
+        border: `2px solid ${iconColor || meta.primary}`,
+      };
+    }
+    return {};
+  };
+
   const renderSocialIcons = () =>
     social.map((socialIcon: any, index: number) => {
       const Icon = iconMapping[socialIcon.icon];
@@ -77,18 +121,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
         <a
           // eslint-disable-next-line react/no-array-index-key
           key={index}
-          style={{
-            display: 'inline-flex',
-            background: socialIcon.color ? socialIcon.color : meta.primary,
-            color: 'white',
-            width: 20,
-            height: 20,
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: '50%',
-            marginRight: 5,
-            fontSize: 11,
-          }}
+          style={getSocialIconStyle(socialIcon.color)}
           href={normalizeLink(socialIcon.link)}
           target="_blank"
           rel="noopener noreferrer"

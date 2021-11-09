@@ -8,6 +8,9 @@ import { FaAngleRight } from '@react-icons/all-files/fa/FaAngleRight';
 // import { AiFillCaretLeft } from '@react-icons/ai/AiFillCaretLeft';
 // import { AiFillCaretRight } from '@react-icons/ai/AiFillCaretRight';
 
+interface WizardProps {
+  setShowCopy: (showCopy: boolean) => void;
+}
 interface StepProps {
   title: string;
   subTitle: string;
@@ -29,15 +32,22 @@ const WizardContext = React.createContext({
 const useWizard = (totalSteps: number) => {
   const [currentStep, setcurrentStep] = useState(1);
   const preStep = () => {
-    setcurrentStep(currentStep - 1 < 1 ? 1 : currentStep - 1);
+    const next = currentStep - 1 < 1 ? 1 : currentStep - 1;
+    setcurrentStep(next);
+    return next;
   };
   const nextStep = () => {
-    setcurrentStep(currentStep + 1 > totalSteps ? totalSteps : currentStep + 1);
+    const next = currentStep + 1 > totalSteps ? totalSteps : currentStep + 1;
+    setcurrentStep(next);
+    return next;
   };
   return [currentStep, preStep, nextStep] as const;
 };
 
-const Wizard: React.FC & WizardStep = ({ children }) => {
+const Wizard: React.FC<WizardProps> & WizardStep = ({
+  setShowCopy,
+  children,
+}) => {
   const [currentStep, preStep, nextStep] = useWizard(
     React.Children.count(children)
   );
@@ -80,13 +90,31 @@ const Wizard: React.FC & WizardStep = ({ children }) => {
         })}
       >
         {currentStep > 1 && (
-          <button type="button" onClick={preStep} className={styles.btn}>
+          <button
+            type="button"
+            onClick={() => {
+              const next = preStep();
+              if (childrenElements && next < childrenElements.length - 1) {
+                setShowCopy(false);
+              }
+            }}
+            className={styles.btn}
+          >
             <FaAngleRight />
             <span> Go Back</span>
           </button>
         )}
         {currentStep < React.Children.count(children) && (
-          <button type="button" onClick={nextStep} className={styles.btn}>
+          <button
+            type="button"
+            onClick={() => {
+              const next = nextStep();
+              if (childrenElements && next >= childrenElements.length - 1) {
+                setShowCopy(true);
+              }
+            }}
+            className={styles.btn}
+          >
             <span> Next</span>
             <FaAngleRight />
           </button>

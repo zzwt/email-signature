@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import type { GetServerSidePropsContext } from 'next';
 import dynamic from 'next/dynamic';
 import axios from 'axios';
@@ -15,12 +15,17 @@ import styles from './styles.module.scss';
 import Wizard from '../../components/Wizard';
 import SocialEditor from '../../components/SocialEditor';
 import ThemeColor from '../../components/ThemeColor';
+import { copyWithStyle } from '../../utils';
 
 const EditorPage: React.FC<Data> = ({ template }) => {
   const Component = useMemo(
     () => dynamic<TemplateProps>(() => import(`../../templates/${template}`)),
     [template]
   );
+
+  const [copyClipboardText, setCopyClipboardText] = useState('Clip to Copy');
+  const [showCopy, setShwoCopy] = useState(false);
+
   const defaultConfig = {
     fields: [
       {
@@ -144,10 +149,25 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         <div className={styles.editor_wrapper}>
           <div className={styles.preview}>
             <Component config={config} />
+            {showCopy && (
+              <button
+                type="button"
+                className={styles.btn}
+                onClick={() => {
+                  copyWithStyle('signature');
+                  setCopyClipboardText('Copied');
+                  setTimeout(() => {
+                    setCopyClipboardText('Clip to Copy');
+                  }, 1000);
+                }}
+              >
+                {copyClipboardText}
+              </button>
+            )}
           </div>
           <div className={styles.editor}>
             {/* */}
-            <Wizard>
+            <Wizard setShowCopy={setShwoCopy}>
               <Wizard.Step
                 title="Color Tone"
                 subTitle="Choose the tone of your signature"

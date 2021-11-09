@@ -133,56 +133,57 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
     });
 
   return (
-    <table
-      // width="600"
-      // border="10"
-      cellSpacing="0"
-      cellPadding="0"
-      // bgcolor="red"
-      style={{ background: meta.background }}
-    >
-      <tbody>
-        <tr>
-          {/* Avatar */}
-          <td
-            width="100"
-            style={{ padding: 15 }}
-            valign="middle"
-            className="demo"
-          >
-            {/* <canvas
+    <div id="signature">
+      <table
+        // width="600"
+        // border="10"
+        cellSpacing="0"
+        cellPadding="0"
+        // bgcolor="red"
+        style={{ background: meta.background }}
+      >
+        <tbody>
+          <tr>
+            {/* Avatar */}
+            <td
+              width="100"
+              style={{ padding: 15 }}
+              valign="middle"
+              className="demo"
+            >
+              {/* <canvas
               id="myCanvas"
               width="90"
               height="90"
               style={{ display: 'none', verticalAlign: 'bottom' }}
             ></canvas> */}
 
-            {
-              // <div style={{ width: 80, height: 80 }}>
-              <div
-                // onError={(e) => (e.target.src = 'unnamed.png')}
-                // src={config.avatar.image}
-                // width="80px"
-                // height="80px"
-                style={
-                  imageConfigToStyle(config.images[0], 80)
-                  // {
-                  // verticalAlign: 'bottom',
-                  // position: 'absolute',
-                  // flexShrink: 1,
-                  // position: 'absolute',
-                  // display: 'inline-block',
-                  // clip: 'rect(98px, 465px, 398px, 165px)',
-                  // objectFit: 'cover',
-                  // backgroundRepeat: 'no-repeat',
-                  // clip: 'rect(98px, 465px, 398px, 165px)',
-                  // }
-                }
-              />
-              // </div>
-            }
+              {
+                // <div style={{ width: 80, height: 80 }}>
+                <div
+                  // onError={(e) => (e.target.src = 'unnamed.png')}
+                  // src={config.avatar.image}
+                  // width="80px"
+                  // height="80px"
+                  style={
+                    imageConfigToStyle(config.images[0], 80)
+                    // {
+                    // verticalAlign: 'bottom',
+                    // position: 'absolute',
+                    // flexShrink: 1,
+                    // position: 'absolute',
+                    // display: 'inline-block',
+                    // clip: 'rect(98px, 465px, 398px, 165px)',
+                    // objectFit: 'cover',
+                    // backgroundRepeat: 'no-repeat',
+                    // clip: 'rect(98px, 465px, 398px, 165px)',
+                    // }
+                  }
+                />
+                // </div>
+              }
 
-            {/* {!finalImage && (
+              {/* {!finalImage && (
               <div>
                 <Dropzone
                   onDrop={(file) => {
@@ -226,8 +227,8 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
               </div>
             )} */}
 
-            {/* import image from url */}
-            {/* <input
+              {/* import image from url */}
+              {/* <input
               type="text"
               style={{
                 margin: 5,
@@ -244,132 +245,75 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                 });
               }}
             /> */}
-            {/* end of import image from url */}
-          </td>
+              {/* end of import image from url */}
+            </td>
 
-          {/* Info Fields */}
-          <td
-            style={{
-              padding: '10px',
-              textAlign: 'left',
-              borderLeft: '2px solid grey',
-            }}
-            valign="middle"
-          >
-            <table>
-              <tbody>
-                <tr>
-                  {/* Name */}
-                  <td
-                    style={{
-                      fontSize: fields[0].content.size.value,
-                      fontWeight: fields[0].content.bold.value
-                        ? 'bold'
-                        : 'normal',
-                      display: 'block',
-                      color: fields[0].content.color?.value
-                        ? fields[0].content.color?.value
-                        : meta.text,
-                    }}
-                  >
-                    <label>{fields[0].content.value}</label>
-                  </td>
-                </tr>
-                {/* Title */}
-                <tr>
-                  <td style={{ padding: 0 }}>
-                    <div
+            {/* Info Fields */}
+            <td
+              style={{
+                padding: '10px',
+                textAlign: 'left',
+                borderLeft: '2px solid grey',
+              }}
+              valign="middle"
+            >
+              <table>
+                <tbody>
+                  <tr>
+                    {/* Name */}
+                    <td
                       style={{
-                        fontSize: fields[1].content.size.value,
-                        minWidth: '200px',
-                        fontWeight: fields[1].content.bold.value
+                        fontSize: fields[0].content.size.value,
+                        fontWeight: fields[0].content.bold.value
                           ? 'bold'
                           : 'normal',
-                        color: fields[1].content.color.value,
+                        display: 'block',
+                        color: fields[0].content.color?.value
+                          ? fields[0].content.color?.value
+                          : meta.text,
                       }}
                     >
-                      <label>{fields[1].content.value}</label>
-                    </div>
-                  </td>
-                </tr>
-                {/* Website */}
-                {renderFields()}
-                {/* Social Icons */}
-                <tr>
-                  <td style={{ padding: 0 }}>
-                    <div
-                      style={{
-                        marginTop: 2,
-                      }}
-                    >
-                      {renderSocialIcons()}
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        {/* <tr>
-          <td colSpan="2" width="600" style={{ padding: 0 }}>
-            <div
-              style={{
-                display: 'flex',
-                padding: '15px 15px 10px 15px',
-                alignItems: 'center',
-                borderTop: '1px solid rgb(0 0 0 / 10%)',
-              }}
-            >
-              <span style={{ display: 'flex', alignItems: 'center' }}>
-                {finalImage && (
-                  <img
-                    onError={(e) => (e.target.src = this.state.logo)}
-                    src={this.state.logo}
-                    height="27"
-                    alt="Logo"
-                    style={{
-                      verticalAlign: 'bottom',
-                    }}
-                  />
-                )}
-
-                {!finalImage && (
-                  <div>
-                    <Dropzone
-                      onDrop={(file) => {
-                        if (file[0].type.includes('image/')) {
-                          let that = this;
-                          var reader = new FileReader();
-                          reader.readAsDataURL(file[0]);
-                          reader.onload = function () {
-                            that.setState({ logo: reader.result });
-                          };
-                          reader.onerror = function (error) {};
-                        } else {
-                        }
-                      }}
-                    >
-                      {({ getRootProps, getInputProps }) => (
-                        <section>
-                          <div {...getRootProps()}>
-                            <input {...getInputProps()} />
-                            <img
-                              alt="Logo"
-                              src={this.state.logo}
-                              height="27px"
-                            />
-                          </div>
-                        </section>
-                      )}
-                    </Dropzone>
-                  </div>
-                )}
-              </span>
-            </div>
-          </td>
-        </tr> */}
-      </tbody>
-    </table>
+                      <label>{fields[0].content.value}</label>
+                    </td>
+                  </tr>
+                  {/* Title */}
+                  <tr>
+                    <td style={{ padding: 0 }}>
+                      <div
+                        style={{
+                          fontSize: fields[1].content.size.value,
+                          minWidth: '200px',
+                          fontWeight: fields[1].content.bold.value
+                            ? 'bold'
+                            : 'normal',
+                          color: fields[1].content.color.value,
+                        }}
+                      >
+                        <label>{fields[1].content.value}</label>
+                      </div>
+                    </td>
+                  </tr>
+                  {/* Website */}
+                  {renderFields()}
+                  {/* Social Icons */}
+                  <tr>
+                    <td style={{ padding: 0 }}>
+                      <div
+                        style={{
+                          marginTop: 2,
+                        }}
+                      >
+                        {renderSocialIcons()}
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 };
 

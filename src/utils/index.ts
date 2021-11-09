@@ -23,3 +23,24 @@ export const imageConfigToStyle = (imageConfig: any, dimension: number) => {
     borderRadius: '50%',
   };
 };
+
+export const copyWithStyle = (element: string) => {
+  const doc = document;
+  const text = doc.getElementById(element);
+  let range;
+  let selection;
+
+  if (doc.body.createTextRange) {
+    range = doc.body.createTextRange();
+    range.moveToElement(text);
+    range.select();
+  } else if (window.getSelection) {
+    selection = window.getSelection();
+    range = doc.createRange();
+    range.selectNodeContents(text);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+  document.execCommand('copy');
+  window.getSelection().removeAllRanges();
+};

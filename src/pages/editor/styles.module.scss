@@ -35,6 +35,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    .btn {
+      margin-top: 20px;
+      background: $theme-300;
+      border: 1px solid $white;
+      border-radius: 5px;
+      padding: 5px 10px;
+      color: $white;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: darken($theme-300, 10%);
+    }
   }
   .editor {
     position: relative;

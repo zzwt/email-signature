@@ -5,12 +5,7 @@ import axios from 'axios';
 import { Data } from '../api/hello';
 import { useConfig } from '../../hooks/useConfig';
 import Editor from '../../components/Editor';
-import {
-  TemplateProps,
-  ElementType,
-  ContentType,
-  IconDisplayType,
-} from '../../types';
+import { TemplateProps, ContentType, IconDisplayType } from '../../types';
 import styles from './styles.module.scss';
 import Wizard from '../../components/Wizard';
 import SocialEditor from '../../components/SocialEditor';

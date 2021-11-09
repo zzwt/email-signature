@@ -1,12 +1,7 @@
-import { divide } from 'lodash';
-import config from 'next/dist/server/config';
 import React, { useState, useContext, useMemo } from 'react';
 import classNames from 'classnames';
-import styles from './styles.module.scss';
-// import { BsCheckLg } from '@react-icons/bs/BsCheckLg';
 import { FaAngleRight } from '@react-icons/all-files/fa/FaAngleRight';
-// import { AiFillCaretLeft } from '@react-icons/ai/AiFillCaretLeft';
-// import { AiFillCaretRight } from '@react-icons/ai/AiFillCaretRight';
+import styles from './styles.module.scss';
 
 interface WizardProps {
   setShowCopy: (showCopy: boolean) => void;
@@ -25,8 +20,8 @@ interface WizardStep {
 
 const WizardContext = React.createContext({
   currentStep: 0,
-  preStep: () => {},
-  nextStep: () => {},
+  preStep: () => 0 as number,
+  nextStep: () => 0 as number,
 });
 
 const useWizard = (totalSteps: number) => {
@@ -68,7 +63,7 @@ const Wizard: React.FC<WizardProps> & WizardStep = ({
     () => childrenElements && childrenElements[currentStep - 1].props.title,
     [childrenElements, currentStep]
   );
-  const description = useMemo(
+  const desc = useMemo(
     () =>
       childrenElements && childrenElements[currentStep - 1].props.description,
     [childrenElements, currentStep]
@@ -78,7 +73,7 @@ const Wizard: React.FC<WizardProps> & WizardStep = ({
     <WizardContext.Provider value={{ currentStep, preStep, nextStep }}>
       <div className={styles.heading}>
         <h1> {title}</h1>
-        <h2> {description}</h2>
+        <h2> {desc}</h2>
       </div>
       <div className={styles.content}> {Component}</div>
 

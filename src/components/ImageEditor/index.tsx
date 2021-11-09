@@ -1,10 +1,7 @@
 import React, { useRef, useState } from 'react';
 import AvatarEditor from 'react-avatar-editor';
-import { TemplateProps } from '../../types';
 import Slider from '../Slider';
 import styles from './styles.module.scss';
-
-// import Image from 'next/image';
 
 interface ImageEditorProps {
   imageConfig: any;

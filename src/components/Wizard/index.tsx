@@ -1,6 +1,8 @@
 import React, { useState, useContext, useMemo } from 'react';
 import classNames from 'classnames';
 import { FaAngleRight } from '@react-icons/all-files/fa/FaAngleRight';
+import { FaAngleLeft } from '@react-icons/all-files/fa/FaAngleLeft';
+import { FaCheck } from '@react-icons/all-files/fa/FaCheck';
 import styles from './styles.module.scss';
 
 interface WizardProps {
@@ -8,21 +10,15 @@ interface WizardProps {
 }
 interface StepProps {
   title: string;
+  // eslint-disable-next-line react/no-unused-prop-types
   subTitle: string;
   description?: string;
   component: React.ReactNode;
-  step?: number;
 }
 
 interface WizardStep {
   Step: typeof Step;
 }
-
-const WizardContext = React.createContext({
-  currentStep: 0,
-  preStep: () => 0 as number,
-  nextStep: () => 0 as number,
-});
 
 const useWizard = (totalSteps: number) => {
   const [currentStep, setcurrentStep] = useState(1);
@@ -39,6 +35,20 @@ const useWizard = (totalSteps: number) => {
   return [currentStep, preStep, nextStep] as const;
 };
 
+const Step: React.FC<StepProps> = ({ title, description, component }) => (
+  <div className={styles.componet_container}>
+    <div className={styles.heading}>
+      <h1> {title}</h1>
+      <h2> {description}</h2>
+    </div>
+
+    <div className={styles.content}>{component}</div>
+  </div>
+);
+Step.defaultProps = {
+  description: '',
+};
+
 const Wizard: React.FC<WizardProps> & WizardStep = ({
   setShowCopy,
   children,
@@ -47,37 +57,37 @@ const Wizard: React.FC<WizardProps> & WizardStep = ({
     React.Children.count(children)
   );
 
-  const childrenElements = React.Children.map(
-    children,
-    (childrenElement: any, index: number) => ({
-      ...childrenElement,
-      props: { ...childrenElement.props, step: index + 1 },
-    })
-  );
+  const childrenElements = React.Children.toArray(children);
 
-  const Component = useMemo(
-    () => childrenElements && childrenElements[currentStep - 1].props.component,
-    [childrenElements, currentStep]
-  );
-  const title = useMemo(
-    () => childrenElements && childrenElements[currentStep - 1].props.title,
-    [childrenElements, currentStep]
-  );
-  const desc = useMemo(
-    () =>
-      childrenElements && childrenElements[currentStep - 1].props.description,
-    [childrenElements, currentStep]
-  );
+  const renderWizardSteps = () =>
+    React.Children.map(children, (childrenElement: any, index: number) => {
+      const step = index + 1;
+      const { title, subTitle } = childrenElement.props;
+      return (
+        <div
+          className={classNames(styles.step_container, {
+            [styles.finished]: step < currentStep,
+            [styles.active]: step === currentStep,
+          })}
+        >
+          <div className={classNames(styles.number)}>
+            {step < currentStep ? <FaCheck /> : step}
+          </div>
+          <div className={classNames(styles.titles)}>
+            <h1>{title} </h1>
+            <h2>{subTitle}</h2>
+          </div>
+        </div>
+      );
+    });
 
+  // eslint-disable-next-line no-undef
+  const Component = childrenElements[currentStep - 1];
   return (
-    <WizardContext.Provider value={{ currentStep, preStep, nextStep }}>
-      <div className={styles.heading}>
-        <h1> {title}</h1>
-        <h2> {desc}</h2>
-      </div>
-      <div className={styles.content}> {Component}</div>
+    <div className={styles.container}>
+      {Component}
 
-      <div className={styles.steps_container}>{childrenElements}</div>
+      <div className={styles.steps_container}>{renderWizardSteps()}</div>
 
       <div
         className={classNames(styles.button_group, {
@@ -95,8 +105,8 @@ const Wizard: React.FC<WizardProps> & WizardStep = ({
             }}
             className={styles.btn}
           >
-            <FaAngleRight />
-            <span> Go Back</span>
+            <FaAngleLeft />
+            <span>Back</span>
           </button>
         )}
         {currentStep < React.Children.count(children) && (
@@ -115,33 +125,8 @@ const Wizard: React.FC<WizardProps> & WizardStep = ({
           </button>
         )}
       </div>
-    </WizardContext.Provider>
-  );
-};
-
-const Step: React.FC<StepProps> = ({ title, subTitle, step = 0 }) => {
-  const { currentStep } = useContext(WizardContext);
-
-  return (
-    <div
-      className={classNames(styles.step_container, {
-        [styles.finished]: step < currentStep,
-        [styles.active]: step === currentStep,
-      })}
-    >
-      <div className={classNames(styles.number)}>
-        {step < currentStep ? <FaAngleRight /> : step}
-      </div>
-      <div className={classNames(styles.titles)}>
-        <h1>{title} </h1>
-        <h2>{subTitle}</h2>
-      </div>
     </div>
   );
-};
-Step.defaultProps = {
-  description: '',
-  step: 0,
 };
 
 Wizard.Step = Step;

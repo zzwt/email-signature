@@ -1,5 +1,9 @@
 @import '../../styles/_variable.scss';
 
+.container {
+  height: 100%;
+}
+
 .steps_container {
   position: absolute;
   display: flex;
@@ -7,7 +11,7 @@
   justify-content: space-between;
   background: $transparent;
   width: 270px;
-  height: 35vh;
+  height: 50vh;
   left: calc(100% - 30px);
   top: 50%;
   transform: translateY(-50%);
@@ -15,6 +19,7 @@
 
 .step_container {
   display: flex;
+  // width: 300px;
   .number {
     display: flex;
     justify-content: center;
@@ -33,8 +38,13 @@
     margin-left: 20px;
     color: hex($grey-600, 0.7);
     h1 {
-      font-size: 19px;
+      font-size: 18px;
       font-weight: $font-weight-bold;
+      color: inherit;
+    }
+    h2 {
+      font-size: 14px;
+      color: inherit;
     }
   }
 }
@@ -57,43 +67,49 @@
     color: hex($white, 0.9);
   }
 }
+.componet_container {
+  height: 90%;
+  .heading {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: $theme-300;
+      font-weight: $font-weight-bold;
+      font-size: 25px;
+    }
+    h2 {
+      color: $grey-600;
+      font-size: 10px;
+    }
+  }
+  .content {
+    height: 70%;
+    background: $grey-200;
+  }
+}
 
-.heading {
-  height: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  h1 {
-    color: $theme-300;
-    font-weight: $font-weight-bold;
-    font-size: 25px;
-  }
-  h2 {
-    color: $grey-600;
-    font-size: 10px;
-  }
-}
-.content {
-  height: 60%;
-  background: $grey-200;
-}
 .button_group {
   height: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   .btn {
+    width: 70px;
     padding: 8px 15px;
     background: $theme-200;
     color: $white;
     vertical-align: center;
-    border-radius: 2px;
+    border: none;
+    border-radius: 3px;
     font-size: 10px;
     margin: 0 30px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
     span {
       margin: 0 5px;
     }

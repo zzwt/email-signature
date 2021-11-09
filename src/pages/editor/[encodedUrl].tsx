@@ -110,6 +110,18 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         link: 'xxx3.com',
       },
     ],
+    images: [
+      {
+        url: 'https://www.mcconnelldowell.com/images/leadership/Steve_Collett-page.jpg',
+        x: 0.28124,
+        y: 0.12,
+        width: 0.5,
+        height: 0.43415,
+        naturalWidth: 600,
+        naturalHeight: 691,
+        zoom: 2,
+      },
+    ],
     meta: {
       primary: '#5661b6',
       background: '#ffffff',
@@ -117,8 +129,14 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       socialIconType: IconDisplayType.FILL,
     },
   };
-  const [config, setDefaultFields, changeFields, changeSocial, changeMeta] =
-    useConfig(defaultConfig);
+  const [
+    config,
+    setDefaultFields,
+    changeFields,
+    changeSocial,
+    changeMeta,
+    changeImage,
+  ] = useConfig(defaultConfig);
 
   return (
     <div className={styles.container}>
@@ -147,6 +165,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
                     config={config}
                     setDefaultFields={setDefaultFields}
                     changeFields={changeFields}
+                    changeImage={changeImage}
                   />
                 }
               />

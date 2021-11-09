@@ -17,6 +17,7 @@
     "lodash": "^4.17.21",
     "next": "11.1.2",
     "react": "17.0.2",
+    "react-avatar-editor": "^12.0.0",
     "react-color": "^2.19.3",
     "react-colorful": "^5.5.0",
     "react-dom": "17.0.2",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.176",
     "@types/react": "17.0.31",
+    "@types/react-avatar-editor": "^10.3.6",
     "@types/react-color": "^3.0.6",
     "@types/react-dom": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^5.1.0",

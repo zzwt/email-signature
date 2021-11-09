@@ -3,7 +3,8 @@ import avatar from '../../public/avatar-1634807028724.PNG';
 import Image from 'next/image';
 import { ContentType, IconDisplayType, TemplateProps } from '../types';
 import { IconType, iconMapping } from '../components/SocialIcons';
-import { normalizeLink, stripLinkProtocol } from '../utils';
+import { imageConfigToStyle, normalizeLink, stripLinkProtocol } from '../utils';
+import react from 'react';
 const Template1: React.FC<TemplateProps> = ({ config }) => {
   const { fields, meta, social } = config;
   const renderFields = () =>
@@ -157,18 +158,28 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
             ></canvas> */}
 
             {
-              <Image
+              // <div style={{ width: 80, height: 80 }}>
+              <div
                 // onError={(e) => (e.target.src = 'unnamed.png')}
-                src={avatar}
-                width="90"
-                height="90"
-                alt=""
-                // style={{
-                //   verticalAlign: 'bottom',
-                //   background: 'black',
-                //   borderRadius: 50,
-                // }}
+                // src={config.avatar.image}
+                // width="80px"
+                // height="80px"
+                style={
+                  imageConfigToStyle(config.images[0], 80)
+                  // {
+                  // verticalAlign: 'bottom',
+                  // position: 'absolute',
+                  // flexShrink: 1,
+                  // position: 'absolute',
+                  // display: 'inline-block',
+                  // clip: 'rect(98px, 465px, 398px, 165px)',
+                  // objectFit: 'cover',
+                  // backgroundRepeat: 'no-repeat',
+                  // clip: 'rect(98px, 465px, 398px, 165px)',
+                  // }
+                }
               />
+              // </div>
             }
 
             {/* {!finalImage && (

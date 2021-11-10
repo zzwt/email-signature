@@ -137,7 +137,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
     changeMeta,
     changeImage,
   ] = useConfig(defaultConfig);
-
+  console.log(config);
   return (
     <div className={styles.container}>
       <div className={styles.left}>

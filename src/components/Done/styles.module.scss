@@ -1,0 +1,16 @@
+@import '../../styles/_variable.scss';
+
+.container {
+  color: $grey-700;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+  height: 100%;
+
+  .icon {
+    margin-top: 70px;
+    font-size: 100px;
+    color: $theme-300;
+  }
+}

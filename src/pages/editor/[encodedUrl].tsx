@@ -12,6 +12,7 @@ import SocialEditor from '../../components/SocialEditor';
 import ThemeColor from '../../components/ThemeColor';
 import { copyWithStyle } from '../../utils';
 import Guide from '../../components/Guide';
+import Done from '../../components/Done';
 
 const EditorPage: React.FC<Data> = ({ template }) => {
   const Component = useMemo(
@@ -201,6 +202,12 @@ const EditorPage: React.FC<Data> = ({ template }) => {
                 title="Finishing up"
                 subTitle="Follow steps to add to your email client"
                 component={<Guide />}
+              />
+              <Wizard.Step
+                title="Done"
+                subTitle="Congratulation! You've made your email signature"
+                description="Feel free to go back to any previous steps to make a change."
+                component={<Done />}
               />
             </Wizard>
           </div>

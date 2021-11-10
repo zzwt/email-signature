@@ -11,6 +11,7 @@ import Wizard from '../../components/Wizard';
 import SocialEditor from '../../components/SocialEditor';
 import ThemeColor from '../../components/ThemeColor';
 import { copyWithStyle } from '../../utils';
+import Guide from '../../components/Guide';
 
 const EditorPage: React.FC<Data> = ({ template }) => {
   const Component = useMemo(
@@ -137,7 +138,6 @@ const EditorPage: React.FC<Data> = ({ template }) => {
     changeMeta,
     changeImage,
   ] = useConfig(defaultConfig);
-  console.log(config);
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -200,13 +200,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
               <Wizard.Step
                 title="Finishing up"
                 subTitle="Follow steps to add to your email client"
-                component={
-                  <Editor
-                    config={config}
-                    // changeBasicInfo={changeBasicInfo}
-                    changeFields={changeFields}
-                  />
-                }
+                component={<Guide />}
               />
             </Wizard>
           </div>

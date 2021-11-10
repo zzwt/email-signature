@@ -29,7 +29,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         label: {
           value: 'Full Name',
           type: { editable: false, value: 'text' }, // text | icon: not supported
-          color: { editable: false, value: '#626262' },
+          color: { editable: false },
           display: { editable: false, value: true },
           bold: { editable: false, value: false },
           size: { editable: false, value: 12 },
@@ -37,7 +37,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         content: {
           value: 'Joel Lu',
           type: { editable: false, value: ContentType.TEXT },
-          color: { editable: true, value: '#626262' },
+          color: { editable: true },
           bold: { editable: true, value: true },
           size: { editable: true, value: 20 },
         },
@@ -47,7 +47,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         label: {
           value: 'Title',
           type: { editable: false, value: 'text' }, // text | icon
-          color: { editable: false, value: '#626262' },
+          color: { editable: false },
           display: { editable: false, value: true },
           bold: { editable: false, value: false },
           size: { editable: false, value: 12 },
@@ -55,7 +55,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         content: {
           value: 'Developer',
           type: { editable: false, value: ContentType.TEXT },
-          color: { editable: true, value: '#626262' },
+          color: { editable: true },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
         },
@@ -65,7 +65,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         label: {
           value: 'Website',
           type: { editable: true, value: 'text' }, // text | icon
-          color: { editable: true, value: '#626262' },
+          color: { editable: true },
           display: { editable: true, value: true },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
@@ -73,7 +73,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         content: {
           value: 'www.google.com',
           type: { editable: true, value: ContentType.TEXT },
-          color: { editable: true, value: '#626262' },
+          color: { editable: true },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
         },
@@ -83,7 +83,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         label: {
           value: 'tel',
           type: { editable: true, value: 'text' }, // text | icon
-          color: { editable: true, value: '#626262' },
+          color: { editable: true },
           display: { editable: true, value: true },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
@@ -91,7 +91,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         content: {
           value: '0333333333',
           type: { editable: true, value: ContentType.TEXT },
-          color: { editable: true, value: '#626262' },
+          color: { editable: true },
           bold: { editable: true, value: false },
           size: { editable: true, value: 12 },
         },

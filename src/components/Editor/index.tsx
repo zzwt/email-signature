@@ -28,6 +28,7 @@ const Editor: React.FC<EditorProps> = ({
         elementConfig={field}
         update={changeFields}
         setDefaultFields={setDefaultFields}
+        meta={config.meta}
       />
     ));
   const renderImageEditors = () =>

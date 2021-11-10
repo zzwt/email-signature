@@ -13,10 +13,12 @@ import Input from './../Input/index';
 interface ElementEditorProps {
   setDefaultFields: (index: number) => void;
   elementConfig: any;
+  meta: any;
   update: any;
   key?: number;
 }
 const ElementEditor: React.FC<ElementEditorProps> = ({
+  meta,
   setDefaultFields,
   elementConfig,
   update,
@@ -97,7 +99,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             {label.color.editable && label.display.value && (
               <div className={styles.container_space}>
                 <ColorEditor
-                  color={label.color.value}
+                  color={label.color.value || meta.text}
                   onColorChange={(color) => {
                     update(key, 'label', {
                       ...label,
@@ -168,7 +170,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
             {content.color.editable && (
               <div className={styles.container_space}>
                 <ColorEditor
-                  color={content.color.value}
+                  color={content.color.value || meta.text}
                   onColorChange={(color) => {
                     update(key, 'content', {
                       ...content,

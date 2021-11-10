@@ -26,7 +26,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                   <span
                     style={{
                       display: 'inline-block',
-                      color: label.color.value,
+                      color: label.color.value ? label.color.value : meta.text,
                       textDecoration: 'none',
                       fontSize: label.size.value,
                       marginRight: 5,
@@ -39,7 +39,9 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                 {content.type.value === ContentType.TEXT ? (
                   <span
                     style={{
-                      color: content.color.value,
+                      color: content.color.value
+                        ? content.color.value
+                        : meta.text,
                       fontSize: content.size.value,
                       fontWeight: content.bold.value ? 'bold' : 'normal',
                     }}
@@ -286,7 +288,9 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                           fontWeight: fields[1].content.bold.value
                             ? 'bold'
                             : 'normal',
-                          color: fields[1].content.color.value,
+                          color: fields[1].content.color?.value
+                            ? fields[1].content.color?.value
+                            : meta.text,
                         }}
                       >
                         <label>{fields[1].content.value}</label>

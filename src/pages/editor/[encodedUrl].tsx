@@ -204,9 +204,9 @@ const EditorPage: React.FC<Data> = ({ template }) => {
                 component={<Guide />}
               />
               <Wizard.Step
-                title="Done"
-                subTitle="Congratulation! You've made your email signature"
-                description="Feel free to go back to any previous steps to make a change."
+                title="All Done"
+                subTitle="Feel free to go back to any previous steps to make a change."
+                description="Congratulation! You've made your email signature"
                 component={<Done />}
               />
             </Wizard>

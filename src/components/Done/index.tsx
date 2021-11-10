@@ -10,6 +10,9 @@ const Done: React.FC = () => {
   return (
     <div className={styles.container}>
       <FaCheckCircle className={styles.icon} />
+      <h2>
+        Feel free to go back to any previous steps to make a change. Thank you!
+      </h2>
     </div>
   );
 };

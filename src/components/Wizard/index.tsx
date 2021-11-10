@@ -79,7 +79,7 @@ const Wizard: React.FC<WizardProps> & WizardStep = ({
           </div>
         </div>
       );
-    });
+    })?.slice(0, childrenElements.length - 1);
 
   // eslint-disable-next-line no-undef
   const Component = childrenElements[currentStep - 1];
@@ -87,7 +87,9 @@ const Wizard: React.FC<WizardProps> & WizardStep = ({
     <div className={styles.container}>
       {Component}
 
-      <div className={styles.steps_container}>{renderWizardSteps()}</div>
+      {currentStep !== childrenElements.length && (
+        <div className={styles.steps_container}>{renderWizardSteps()}</div>
+      )}
 
       <div
         className={classNames(styles.button_group, {
@@ -120,7 +122,9 @@ const Wizard: React.FC<WizardProps> & WizardStep = ({
             }}
             className={styles.btn}
           >
-            <span> Next</span>
+            <span>
+              {currentStep === childrenElements.length - 1 ? 'Done' : 'Next'}
+            </span>
             <FaAngleRight />
           </button>
         )}

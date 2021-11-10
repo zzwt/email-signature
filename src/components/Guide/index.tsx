@@ -14,8 +14,8 @@ const Guide: React.FC = () => {
       <h3>2. Paste it to your email client.</h3>
       <h5>
         Please note that there maybe limits of allowed characters on your email
-        client. If that's the case, try reduce the number social media icons to
-        minimize signature size.
+        client. If that's the case, try reducing the number of social media
+        icons to minimize signature size.
       </h5>
     </div>
   );

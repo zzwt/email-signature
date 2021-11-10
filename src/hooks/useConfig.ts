@@ -49,13 +49,17 @@ export const useConfig = (defaultConfig: any) => {
     setConfig({ ...config, meta: { ...config.meta, [key]: val } });
   };
 
-  const changeImage = (index: number, val: any) => {
-    console.log(val);
-    const newImages = config.images.map((img: any, i: number) =>
-      index === i ? val : img
-    );
-    setConfig({ ...config, images: newImages });
-  };
+  const changeImage = useCallback(
+    (index: number, val: any) => {
+      console.log('setting in hook', val);
+      const newImages = config.images.map((img: any, i: number) =>
+        index === i ? val : img
+      );
+      setConfig({ ...config, images: newImages });
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [config.images]
+  );
 
   return [
     config,

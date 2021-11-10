@@ -39,6 +39,9 @@
         cursor: pointer;
         color: $white;
       }
+      button:disabled {
+        background: $grey-500;
+      }
       .error {
         position: absolute;
         top: -23px;

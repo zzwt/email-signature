@@ -112,14 +112,14 @@ const EditorPage: React.FC<Data> = ({ template }) => {
     ],
     images: [
       {
-        url: 'https://www.mcconnelldowell.com/images/leadership/Steve_Collett-page.jpg',
-        x: 0.28124,
-        y: 0.12,
-        width: 0.5,
-        height: 0.43415,
-        naturalWidth: 600,
-        naturalHeight: 691,
-        zoom: 2,
+        url: '/avatar.png',
+        x: 0,
+        y: 0,
+        width: 1,
+        height: 1,
+        naturalWidth: 300,
+        naturalHeight: 300,
+        zoom: 1,
       },
     ],
     meta: {

@@ -39,7 +39,6 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
       const found = socialIcons
         .map((socialIcon: any) => socialIcon.icon)
         .findIndex((i) => i === iconList[index]);
-      console.log(found);
       if (found === -1) {
         return iconList[index];
       }

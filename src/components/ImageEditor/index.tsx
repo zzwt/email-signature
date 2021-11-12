@@ -107,6 +107,7 @@ const ImageEditor: React.FC<ImageEditorProps> = React.memo(
               type="text"
               ref={inputRef}
               value={urlInput}
+              placeholder="Enter your Image Url"
               onChange={(e) => {
                 setError(null);
                 setUrlInput(e.target.value);

@@ -97,6 +97,42 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         },
         key: 3,
       },
+      {
+        label: {
+          value: 'email',
+          type: { editable: true, value: 'text' }, // text | icon
+          color: { editable: true },
+          display: { editable: true, value: true },
+          bold: { editable: true, value: false },
+          size: { editable: true, value: 12 },
+        },
+        content: {
+          value: 'xxx@gmail.com',
+          type: { editable: true, value: ContentType.EMAIL },
+          color: { editable: true },
+          bold: { editable: true, value: false },
+          size: { editable: true, value: 12 },
+        },
+        key: 4,
+      },
+      // {
+      //   label: {
+      //     value: 'tel',
+      //     type: { editable: true, value: 'text' }, // text | icon
+      //     color: { editable: true },
+      //     display: { editable: true, value: true },
+      //     bold: { editable: true, value: false },
+      //     size: { editable: true, value: 12 },
+      //   },
+      //   content: {
+      //     value: '0333333333',
+      //     type: { editable: true, value: ContentType.TEXT },
+      //     color: { editable: true },
+      //     bold: { editable: true, value: false },
+      //     size: { editable: true, value: 12 },
+      //   },
+      //   key: 5,
+      // },
     ],
     social: [
       {
@@ -165,8 +201,8 @@ const EditorPage: React.FC<Data> = ({ template }) => {
             {/* */}
             <Wizard setShowCopy={setShwoCopy}>
               <Wizard.Step
-                title="Color Tone"
-                subTitle="Choose the tone of your signature"
+                title="Theme Color"
+                subTitle="Color palette for your signature"
                 description="If you are happy with default color, go to next"
                 component={
                   <ThemeColor config={config} changeMeta={changeMeta} />
@@ -174,7 +210,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
               />
               <Wizard.Step
                 title="Basic Info"
-                subTitle="Freely edit your fileds information"
+                subTitle="Feel free to change your profile content"
                 description="Customize your info and style"
                 component={
                   <Editor
@@ -187,7 +223,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
               />
               <Wizard.Step
                 title="Social Media"
-                subTitle="Edit and add your favourite social media link"
+                subTitle="Edit your social icons to stand out in a crowd"
                 description="Customize your social link"
                 component={
                   <SocialEditor
@@ -200,7 +236,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
               />
               <Wizard.Step
                 title="Finishing up"
-                subTitle="Follow steps to add to your email client"
+                subTitle="Follow steps to make it shine"
                 component={<Guide />}
               />
               <Wizard.Step

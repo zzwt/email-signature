@@ -68,44 +68,48 @@
   }
 }
 .componet_container {
-  height: 90%;
-  .heading {
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h1 {
-      color: $theme-300;
-      font-weight: $font-weight-bold;
-      font-size: 25px;
-    }
-    h2 {
-      color: $grey-600;
-      font-size: 10px;
-    }
-  }
+  // .heading {
+  //   height: 30%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
   .content {
-    height: 70%;
-    background: $grey-200;
+    // height: 100%;
+    min-height: 555px;
+    width: 100%;
+    // background: $grey-200;
+    display: flex;
+    // h1 {
+    //   color: $theme-300;
+    //   font-weight: $font-weight-bold;
+    //   font-size: 25px;
+    // }
+    // h2 {
+    //   color: $grey-600;
+    //   font-size: 10px;
+    // }
   }
 }
 
 .button_group {
-  height: 10%;
+  // height: 10%;
+  padding: 20px 0;
+  width: 80%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   .btn {
     width: 70px;
-    padding: 8px 15px;
+    padding: 8px 12px;
     background: $theme-200;
     color: $white;
     vertical-align: center;
     border: none;
     border-radius: 3px;
     font-size: 10px;
-    margin: 0 30px;
     cursor: pointer;
     display: flex;
     align-items: center;

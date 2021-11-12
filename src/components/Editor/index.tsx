@@ -44,8 +44,13 @@ const Editor: React.FC<EditorProps> = ({
 
   return (
     <div className={styles.container}>
-      {'images' in config && renderImageEditors()}
-      {'fields' in config && renderFieldEditors()}
+      <h2>Edit Your Avatar and Content</h2>
+      <div className={styles.avatar_container}>
+        {'images' in config && renderImageEditors()}
+      </div>
+      <div className={styles.fields_container}>
+        {'fields' in config && renderFieldEditors()}
+      </div>
     </div>
   );
 };

@@ -8,6 +8,11 @@
   width: 350px;
   margin: auto;
   // background: red;
+  h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    color: $grey-700;
+  }
   .added_icons_container {
     position: relative;
     .added_icons {

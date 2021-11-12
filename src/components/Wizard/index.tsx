@@ -37,10 +37,9 @@ const useWizard = (totalSteps: number) => {
 
 const Step: React.FC<StepProps> = ({ title, description, component }) => (
   <div className={styles.componet_container}>
-    <div className={styles.heading}>
-      <h1> {title}</h1>
-      <h2> {description}</h2>
-    </div>
+    {/* <div className={styles.heading}>
+    
+    </div> */}
 
     <div className={styles.content}>{component}</div>
   </div>

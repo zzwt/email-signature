@@ -21,9 +21,11 @@ const ThemeColor: React.FC<ThemeColorProps> = ({ config, changeMeta }) => {
   return (
     <div className={styles.container}>
       <div className={styles.theme_color}>
-        <h3>Click Palette to Change Color</h3>
+        {/* <h1>Color Tone</h1>
+        <h2>If you are happy with default color, go to next</h2> */}
+        <h2>Click Palette to Change Color</h2>
         <div className={styles.top}>
-          <div className={styles.top_element}>Primary</div>
+          <div className={styles.top_element}>Theme</div>
           <div className={styles.top_element}>Background</div>
           <div className={styles.top_element}>Text</div>
         </div>

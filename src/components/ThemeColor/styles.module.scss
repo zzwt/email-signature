@@ -1,16 +1,15 @@
 @import '../../styles/_variable.scss';
 
 .container {
-  height: 100%;
+  width: 100%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-
   .theme_color {
-    width: 300px;
-    h3 {
-      color: $grey-600;
+    width: 320px;
+    h2 {
+      color: $grey-700;
       text-align: center;
       margin-bottom: 20px;
     }

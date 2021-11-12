@@ -141,6 +141,7 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
     });
   return (
     <div className={styles.container}>
+      <h2>Social Media Icons</h2>
       <div className={styles.added_icons_container}>
         <div className={styles.added_icons}>{renderAddedSocialIcons()}</div>
         {socialIcons.length < 5 && (

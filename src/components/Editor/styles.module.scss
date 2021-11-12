@@ -1,9 +1,24 @@
 @import '../../styles/_variable.scss';
 
 .container {
-  height: 100%;
   display: flex;
-  justify-content: space-evenly;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  // height: 100%;
+  padding: 20px 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  h2 {
+    margin: 50px 0;
+    color: $grey-700;
+  }
+  .avatar_container {
+    width: 100%;
+  }
+  .fields_container {
+    margin-top: 20px;
+    width: 100%;
+  }
 }

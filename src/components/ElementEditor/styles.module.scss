@@ -1,10 +1,11 @@
 @import '../../styles/_variable.scss';
 
 .field_container {
-  width: 80%;
+  // width: 80%;
   min-width: 350px;
   border-radius: 5px;
   border: 2px solid $theme-300;
+  position: relative;
   .basic {
     width: 100%;
     display: flex;
@@ -48,16 +49,19 @@
     }
   }
   .field_more {
+    // position: absolute;
     border-top: 2px solid $theme-300;
     display: flex;
     width: 100%;
+    z-index: 100;
+    // background: rgba(0, 0, 0, 0.5);
     .field_more_label {
       width: 170px;
       // flex-shrink: 1;
       display: flex;
       flex-direction: column;
       padding: 10px;
-
+      background: $theme-100;
       // input {
       //   border: none;
       //   width: 100%;
@@ -97,6 +101,9 @@
       height: 25px;
     }
   }
+}
+.field_container + .field_container {
+  margin-top: 9px;
 }
 
 .container_space {

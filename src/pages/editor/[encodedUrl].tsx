@@ -186,11 +186,11 @@ const EditorPage: React.FC<Data> = ({ template }) => {
                 type="button"
                 className={styles.btn}
                 onClick={() => {
-                  copyWithStyle('signature');
-                  setCopyClipboardText('Copied');
+                  const count = copyWithStyle('signature');
+                  setCopyClipboardText(`${count} Characters Copied`);
                   setTimeout(() => {
                     setCopyClipboardText('Clip to Copy');
-                  }, 1000);
+                  }, 2000);
                 }}
               >
                 {copyClipboardText}

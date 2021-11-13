@@ -43,4 +43,5 @@ export const copyWithStyle = (element: string) => {
   }
   document.execCommand('copy');
   window.getSelection().removeAllRanges();
+  return text?.outerHTML.length;
 };

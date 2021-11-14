@@ -6,6 +6,7 @@
   border-radius: 5px;
   border: 2px solid $theme-300;
   position: relative;
+
   .basic {
     width: 100%;
     display: flex;
@@ -50,58 +51,77 @@
   }
   .field_more {
     // position: absolute;
-    border-top: 2px solid $theme-300;
-    display: flex;
+    // display: none;
+    overflow: hidden;
     width: 100%;
-    z-index: 100;
+    // height: 0;
+    // z-index: 100;
     // background: rgba(0, 0, 0, 0.5);
-    .field_more_label {
-      width: 170px;
-      // flex-shrink: 1;
+    .field_more_wrapper {
       display: flex;
-      flex-direction: column;
-      padding: 10px;
-      background: $theme-100;
-      // input {
-      //   border: none;
-      //   width: 100%;
-      //   padding: 5px 10px;
-      //   border-radius: 5px;
-      //   margin-top: 10px;
-      //   outline: none;
-      // }
-    }
-    .field_more_content {
-      // position: relative;
-      flex-shrink: 1;
-      flex-grow: 1;
-      background: $white;
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      // &_heading {
-      //   color: $theme-400;
-      //   font-weight: $font-weight-bold;
-      //   margin-bottom: 10px;
-      //   display: flex;
-      //   justify-content: space-between;
-      // }
-      &_default {
+      height: 0;
+
+      .field_more_label {
+        width: 170px;
+        // flex-shrink: 1;
         display: flex;
-        justify-content: flex-end;
+        flex-direction: column;
+        padding: 10px;
+        background: $theme-100;
+        // transition: max-height 4s ease-out;
+        // height: auto;
+        // max-height: 0;
+        // input {
+        //   border: none;
+        //   width: 100%;
+        //   padding: 5px 10px;
+        //   border-radius: 5px;
+        //   margin-top: 10px;
+        //   outline: none;
+        // }
+        // height: 100%;
+      }
+
+      .field_more_content {
+        // height: 100%;
+        // position: relative;
+        flex-shrink: 1;
+        flex-grow: 1;
+        background: $white;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        // &_heading {
+        //   color: $theme-400;
+        //   font-weight: $font-weight-bold;
+        //   margin-bottom: 10px;
+        //   display: flex;
+        //   justify-content: space-between;
+        // }
+        // &_default {
+        //   display: flex;
+        //   justify-content: flex-end;
+        // }
+      }
+
+      &_heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $theme-400;
+        font-weight: $font-weight-bold;
+        margin-bottom: 10px;
+        height: 25px;
       }
     }
-    &_heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: $theme-400;
-      font-weight: $font-weight-bold;
-      margin-bottom: 10px;
-      height: 25px;
+    .field_more_wrapper_expanded {
+      border-top: 2px solid $theme-300;
+      height: auto;
     }
   }
 }
+
 .field_container + .field_container {
   margin-top: 9px;
 }

@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
-import ElementEditor from '../ElementEditor';
+import { animated, useSpring } from 'react-spring';
+import classNames from 'classnames';
 import { TemplateProps } from '../../types';
 import styles from './styles.module.scss';
 import ColorPicker from '../ColorPicker';
-import classNames from 'classnames';
 
 interface ThemeColorProps extends TemplateProps {
   changeMeta: (key: string, val: string) => void;
@@ -18,8 +18,14 @@ const ThemeColor: React.FC<ThemeColorProps> = ({ config, changeMeta }) => {
     setToggleColorPicker(false);
   };
 
+  const animatedProps = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { duration: 500 },
+  });
+
   return (
-    <div className={styles.container}>
+    <animated.div className={styles.container} style={animatedProps}>
       <div className={styles.theme_color}>
         {/* <h1>Color Tone</h1>
         <h2>If you are happy with default color, go to next</h2> */}
@@ -69,7 +75,7 @@ const ThemeColor: React.FC<ThemeColorProps> = ({ config, changeMeta }) => {
           />
         </div>
       </div>
-    </div>
+    </animated.div>
   );
 };
 export default ThemeColor;

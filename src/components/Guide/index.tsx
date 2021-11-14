@@ -1,14 +1,16 @@
 import React from 'react';
+import { animated, useSpring } from 'react-spring';
 import styles from './styles.module.scss';
 
-// interface ColorPickerProps {
-//   color: string;
-//   onColorChange: (value: string) => void;
-// }
-
 const Guide: React.FC = () => {
+  const animatedProps = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { duration: 500 },
+  });
+
   return (
-    <div className={styles.container}>
+    <animated.div className={styles.container} style={animatedProps}>
       <h1>How to use it</h1>
       <h3>1. Click the button on the left to copy.</h3>
       <h3>2. Paste it to your email client.</h3>
@@ -17,7 +19,7 @@ const Guide: React.FC = () => {
         email client. If that's the case, try reducing the number of social
         media icons to minimize signature size.
       </h4>
-    </div>
+    </animated.div>
   );
 };
 export default Guide;

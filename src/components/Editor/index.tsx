@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { animated, useSpring } from 'react-spring';
 import ElementEditor from '../ElementEditor';
 import { TemplateProps } from '../../types';
 import styles from './styles.module.scss';
@@ -52,8 +52,14 @@ const Editor: React.FC<EditorProps> = ({
       />
     ));
 
+  const animatedProps = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { duration: 500 },
+  });
+
   return (
-    <div className={styles.container}>
+    <animated.div className={styles.container} style={animatedProps}>
       <h2>Edit Your Avatar and Content</h2>
       <div className={styles.avatar_container}>
         {'images' in config && renderImageEditors()}
@@ -61,7 +67,7 @@ const Editor: React.FC<EditorProps> = ({
       <div className={styles.fields_container}>
         {'fields' in config && renderFieldEditors()}
       </div>
-    </div>
+    </animated.div>
   );
 };
 export default Editor;

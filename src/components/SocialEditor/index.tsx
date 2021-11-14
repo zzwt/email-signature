@@ -3,6 +3,7 @@ import { AiFillMinusCircle } from '@react-icons/all-files/ai/AiFillMinusCircle';
 import { IoAddCircle } from '@react-icons/all-files/io5/IoAddCircle';
 import { BiColorFill } from '@react-icons/all-files/bi/BiColorFill';
 import { RiExchangeFill } from '@react-icons/all-files/ri/RiExchangeFill';
+import { animated, useSpring } from 'react-spring';
 import ReactTooltip from 'react-tooltip';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
@@ -139,8 +140,14 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
         </div>
       );
     });
+  const animatedProps = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { duration: 500 },
+  });
+
   return (
-    <div className={styles.container}>
+    <animated.div className={styles.container} style={animatedProps}>
       <h2>Social Media Icons</h2>
       <div className={styles.added_icons_container}>
         <div className={styles.added_icons}>{renderAddedSocialIcons()}</div>
@@ -241,7 +248,7 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
           />
         )}
       </div>
-    </div>
+    </animated.div>
   );
 };
 export default SocialEditor;

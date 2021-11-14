@@ -1,10 +1,8 @@
 import React from 'react';
-import avatar from '../../public/avatar-1634807028724.PNG';
-import Image from 'next/image';
 import { ContentType, IconDisplayType, TemplateProps } from '../types';
-import { IconType, iconMapping } from '../components/SocialIcons';
+import { iconMapping } from '../components/SocialIcons';
 import { imageConfigToStyle, normalizeLink, stripLinkProtocol } from '../utils';
-import react from 'react';
+
 const Template1: React.FC<TemplateProps> = ({ config }) => {
   const { fields, meta, social } = config;
   const renderFields = () =>
@@ -12,7 +10,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
       .filter((_: any, i: number) => i > 1)
       .map((field: any, index: number) => {
         const { label, content } = field;
-        if (label.value.trim().length > 0 || content.value.trim().length > 0) {
+        if (content.value.trim().length > 0) {
           return (
             // eslint-disable-next-line react/no-array-index-key
             <tr key={index}>

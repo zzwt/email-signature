@@ -115,24 +115,24 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         },
         key: 4,
       },
-      // {
-      //   label: {
-      //     value: 'tel',
-      //     type: { editable: true, value: 'text' }, // text | icon
-      //     color: { editable: true },
-      //     display: { editable: true, value: true },
-      //     bold: { editable: true, value: false },
-      //     size: { editable: true, value: 12 },
-      //   },
-      //   content: {
-      //     value: '0333333333',
-      //     type: { editable: true, value: ContentType.TEXT },
-      //     color: { editable: true },
-      //     bold: { editable: true, value: false },
-      //     size: { editable: true, value: 12 },
-      //   },
-      //   key: 5,
-      // },
+      {
+        label: {
+          value: 'Address',
+          type: { editable: true, value: 'text' }, // text | icon
+          color: { editable: true },
+          display: { editable: true, value: true },
+          bold: { editable: true, value: false },
+          size: { editable: true, value: 12 },
+        },
+        content: {
+          value: 'sss st, Sydney',
+          type: { editable: true, value: ContentType.TEXT },
+          color: { editable: true },
+          bold: { editable: true, value: false },
+          size: { editable: true, value: 12 },
+        },
+        key: 5,
+      },
     ],
     social: [
       {

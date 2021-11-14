@@ -12,65 +12,71 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
       .filter((_: any, i: number) => i > 1)
       .map((field: any, index: number) => {
         const { label, content } = field;
-        return (
-          // eslint-disable-next-line react/no-array-index-key
-          <tr key={index}>
-            <td style={{ padding: 0 }}>
-              <div
-                style={{
-                  minWidth: '200px',
-                  // color: field.label.color.value,
-                }}
-              >
-                {label.display.value && (
-                  <span
-                    style={{
-                      display: 'inline-block',
-                      color: label.color.value ? label.color.value : meta.text,
-                      textDecoration: 'none',
-                      fontSize: label.size.value,
-                      marginRight: 5,
-                      fontWeight: label.bold.value ? 'bold' : 'normal',
-                    }}
-                  >
-                    {label.value}
-                  </span>
-                )}
-                {content.type.value === ContentType.TEXT ? (
-                  <span
-                    style={{
-                      color: content.color.value
-                        ? content.color.value
-                        : meta.text,
-                      fontSize: content.size.value,
-                      fontWeight: content.bold.value ? 'bold' : 'normal',
-                    }}
-                  >
-                    {content.value}
-                  </span>
-                ) : (
-                  <a
-                    href={
-                      content.type.value === ContentType.EMAIL
-                        ? `mailto:${content.value}`
-                        : normalizeLink(content.value)
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: content.color.value,
-                      textDecoration: 'underline',
-                      fontSize: content.size.value,
-                      fontWeight: content.bold.value ? 'bold' : 'normal',
-                    }}
-                  >
-                    {stripLinkProtocol(content.value)}
-                  </a>
-                )}
-              </div>
-            </td>
-          </tr>
-        );
+        if (label.value.trim().length > 0 || content.value.trim().length > 0) {
+          return (
+            // eslint-disable-next-line react/no-array-index-key
+            <tr key={index}>
+              <td style={{ padding: 0 }}>
+                <div
+                  style={{
+                    minWidth: '200px',
+                    // color: field.label.color.value,
+                  }}
+                >
+                  {label.display.value && label.value.trim().length > 0 && (
+                    <span
+                      style={{
+                        display: 'inline-block',
+                        color: label.color.value
+                          ? label.color.value
+                          : meta.text,
+                        textDecoration: 'none',
+                        fontSize: label.size.value,
+                        marginRight: 5,
+                        fontWeight: label.bold.value ? 'bold' : 'normal',
+                      }}
+                    >
+                      {label.value}
+                    </span>
+                  )}
+                  {content.value.trim().length > 0 &&
+                    (content.type.value === ContentType.TEXT ? (
+                      <span
+                        style={{
+                          color: content.color.value
+                            ? content.color.value
+                            : meta.text,
+                          fontSize: content.size.value,
+                          fontWeight: content.bold.value ? 'bold' : 'normal',
+                        }}
+                      >
+                        {content.value}
+                      </span>
+                    ) : (
+                      <a
+                        href={
+                          content.type.value === ContentType.EMAIL
+                            ? `mailto:${content.value}`
+                            : normalizeLink(content.value)
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          color: content.color.value,
+                          textDecoration: 'underline',
+                          fontSize: content.size.value,
+                          fontWeight: content.bold.value ? 'bold' : 'normal',
+                        }}
+                      >
+                        {stripLinkProtocol(content.value)}
+                      </a>
+                    ))}
+                </div>
+              </td>
+            </tr>
+          );
+        }
+        return null;
       });
 
   const getSocialIconStyle = (iconColor: string | undefined) => {

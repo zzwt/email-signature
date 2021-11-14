@@ -18,46 +18,55 @@ interface ElementEditorProps {
   meta: any;
   update: any;
   key?: number;
+  open: boolean;
+  toggleField: (index: number) => void;
 }
 const ElementEditor: React.FC<ElementEditorProps> = ({
   meta,
   setDefaultFields,
   elementConfig,
   update,
+  open,
+  toggleField,
 }) => {
   const { label, content, key } = elementConfig;
-  const [toggleMore, setToggleMore] = useState(false);
+  // const [toggleMore, setToggleMore] = useState(false);
   const renderToggler = useCallback(
     () =>
-      !toggleMore ? (
+      !open ? (
         <CgMoreO
           onClick={() => {
-            setToggleMore(!toggleMore);
+            // setToggleMore(!toggleMore);
+            toggleField(key);
           }}
         />
       ) : (
         <BsArrowUp
           onClick={() => {
-            setToggleMore(!toggleMore);
+            // setToggleMore(!toggleMore);
+            toggleField(key);
           }}
         />
       ),
-    [toggleMore]
+    [open]
   );
 
   const [ref, { height }] = useMeasure();
-  const propps = useSpring({ height });
+  const animatedProps = useSpring({
+    height,
+    config: { tension: 300, clamp: true },
+  });
 
   return (
     <div className={styles.field_container}>
       <div className={styles.basic}>
-        <label className={classNames({ [styles.toggler_open]: toggleMore })}>
+        <label className={classNames({ [styles.toggler_open]: open })}>
           {label.display.value && label.value}
         </label>
 
         <div className={styles.content}>
           <input
-            className={classNames({ [styles.toggler_open]: toggleMore })}
+            className={classNames({ [styles.toggler_open]: open })}
             type="text"
             value={content.value}
             onChange={(e) =>
@@ -71,10 +80,13 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
         </div>
       </div>
       {
-        <animated.div className={styles.field_more} style={{ ...propps }}>
+        <animated.div
+          className={styles.field_more}
+          style={{ ...animatedProps }}
+        >
           <div
             className={classNames(styles.field_more_wrapper, {
-              [styles.field_more_wrapper_expanded]: toggleMore,
+              [styles.field_more_wrapper_expanded]: open,
             })}
             ref={ref}
           >
@@ -159,6 +171,7 @@ const ElementEditor: React.FC<ElementEditorProps> = ({
                 <span>Content Settings</span>
                 <button
                   className={styles.btn}
+                  type="button"
                   onClick={() => setDefaultFields(key)}
                 >
                   Reset

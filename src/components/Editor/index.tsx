@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ElementEditor from '../ElementEditor';
 import { TemplateProps } from '../../types';
@@ -21,14 +21,24 @@ const Editor: React.FC<EditorProps> = ({
   changeFields,
   changeImage,
 }) => {
+  const [expandedField, setExpandedField] = useState(-1);
+  const toggleField = (index: number) => {
+    if (index === expandedField) {
+      setExpandedField(-1);
+      return;
+    }
+    setExpandedField(index);
+  };
   const renderFieldEditors = () =>
-    config.fields.map((field: any) => (
+    config.fields.map((field: any, index: number) => (
       <ElementEditor
         key={field.key}
         elementConfig={field}
         update={changeFields}
         setDefaultFields={setDefaultFields}
         meta={config.meta}
+        open={index === expandedField}
+        toggleField={toggleField}
       />
     ));
   const renderImageEditors = () =>

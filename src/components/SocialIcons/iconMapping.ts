@@ -73,123 +73,123 @@ export const iconMapping: IiconMapping = {
 
 export const iconStorageMapping: IiconStorageMapping = {
   'ImFacebook-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974208/facebook-outline_hqdglz.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/facebook-outline_qxeojx.png',
   'FaTwitter-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/twitter-outline_o1iibh.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/twitter-outline_pvwjob.png',
   'SiInstagram-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974209/instagram-outline_immtkv.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/instagram-outline_aa5tv1.png',
   'FaLinkedinIn-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974209/linkedin-outline_pj51vk.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/linkedin-outline_m40guf.png',
   'ImSkype-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974211/Skype-outline_sxs6cn.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041815/sig/Skype-outline_kn1ycn.png',
   'FaTumblr-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/tumblr-outline_chgov6.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/tumblr-outline_m1ahrq.png',
   'FaGoogle-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974208/google-outline_ujamwv.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/google-outline_kdu8mg.png',
   'FaFacebookMessenger-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974209/messenger-outline_g7pjsx.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/messenger-outline_tcuj3i.png',
   'IoLogoWhatsapp-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/whatsapp-outline_iihyyg.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041811/sig/whatsapp-outline_qnnka6.png',
   'FaQq-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/qq-outline_cupv5r.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/qq-outline_c65set.png',
   'ImPinterest-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/pinterest-outline_k3ynvu.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/pinterest-outline_lsdhyy.png',
   'AiFillYoutube-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974213/youtube-outline_bxjolg.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041811/sig/youtube-outline_qvi6lw.png',
   'GrVimeo-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/vimeo-outline_tgd46p.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/vimeo-outline_kpju6q.png',
   'IoLogoWechat-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/wechat-outline_llbtdu.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/wechat-outline_a8btqe.png',
   'GoMarkGithub-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974208/github-outline_uxxshh.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/github-outline_jls061.png',
   'FaDropbox-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974208/dropbox-outline_abumif.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/dropbox-outline_eyo4av.png',
   'FaSlackHash-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974211/slack-outline_ilteod.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041809/sig/slack-outline_cswsic.png',
   'FaRedditAlien-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/reddit-outline_f9kekv.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/reddit-outline_desb96.png',
   'SiTiktok-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974211/tiktok-outline_sbtozb.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/tiktok-outline_nnlda6.png',
   'FaMicrosoft-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974209/microsoft-outline_mfytqf.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/microsoft-outline_xom8zm.png',
   'FaBehance-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974207/behance-outline_qpj4ps.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/behance-outline_znyz3x.png',
   'FaWeibo-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/weibo-outline_d2t8aj.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/weibo-outline_v3grgv.png',
   'FaTelegramPlane-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974211/telegram-outline_sl5fu8.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041809/sig/telegram-outline_jieiv2.png',
   'SiSnapchat-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974211/snapchat-outline_cqqogh.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041809/sig/snapchat-outline_c6vkvm.png',
   'FaQuora-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/quora-outline_d9ttbe.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/quora-outline_ihvlqi.png',
   'RiBilibiliFill-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974207/bilibili-outline_g8cc7l.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/bilibili-outline_ycdain.png',
   'FaPaypal-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/paypal-outline_sxotzg.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/paypal-outline_auebkk.png',
   'FaMediumM-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974209/medium-outline_btfcet.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/medium-outline_cypzxo.png',
   'FaYelp-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/yelp-outline_hu1qm9.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041811/sig/yelp-outline_zvhynr.png',
   'SiDribbble-outline':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974207/dribbble-outline_hicgry.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/dribbble-outline_jaj6eu.png',
   'ImFacebook-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974208/facebook-fill_s2mv9z.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/facebook-fill_e8evjw.png',
   'FaTwitter-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/twitter-fill_qxuchj.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/twitter-fill_hpnohu.png',
   'SiInstagram-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974209/instagram-fill_xfjy26.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/instagram-fill_nwfkli.png',
   'FaLinkedinIn-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974209/linkedin-fill_nzhrvt.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/linkedin-fill_xw0mho.png',
   'ImSkype-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/Skype-fill_tw2qpg.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/Skype-fill_t7nvba.png',
   'FaTumblr-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974211/tumblr-fill_rhzkxd.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/tumblr-fill_qmw5kv.png',
   'FaGoogle-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974208/google-fill_ascoio.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/google-fill_dm8it4.png',
   'FaFacebookMessenger-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974209/messenger-fill_fffgeq.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/messenger-fill_f9lzmt.png',
   'IoLogoWhatsapp-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/whatsapp-fill_puwpf2.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041811/sig/whatsapp-fill_cmzm2c.png',
   'FaQq-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/qq-fill_yhibke.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/qq-fill_xjpamq.png',
   'ImPinterest-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/pinterest-fill_mypypp.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/pinterest-fill_pufc4a.png',
   'AiFillYoutube-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974213/youtube-fill_vvckxh.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041811/sig/youtube-fill_eqsyfa.png',
   'GrVimeo-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/vimeo-fill_ubckiz.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/vimeo-fill_uxorgs.png',
   'IoLogoWechat-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/wechat-fill_p5yxjo.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/wechat-fill_rlz4j5.png',
   'GoMarkGithub-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974208/github-fill_bjmq2z.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/github-fill_jck2ki.png',
   'FaDropbox-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974208/dropbox-fill_arpsab.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/dropbox-fill_z5ejbv.png',
   'FaSlackHash-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974211/slack-fill_n2bfdi.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041809/sig/slack-fill_klfprt.png',
   'FaRedditAlien-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/reddit-fill_hnbsjk.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/reddit-fill_jf8g25.png',
   'SiTiktok-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974211/tiktok-fill_dqndqm.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/tiktok-fill_l1fa4h.png',
   'FaMicrosoft-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974209/microsoft-fill_v8rv0z.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/microsoft-fill_m2a9no.png ',
   'FaBehance-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974207/behance-fill_pec0om.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041811/sig/behance-fill_soyxp7.png',
   'FaWeibo-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/weibo-fill_xxiajj.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041810/sig/weibo-fill_l3bjxd.png',
   'FaTelegramPlane-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974211/telegram-fill_ex3j0h.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041809/sig/telegram-fill_unw5h9.png',
   'SiSnapchat-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974211/snapchat-fill_mpjsg0.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041809/sig/snapchat-fill_uvtpwf.png',
   'FaQuora-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/quora-fill_bymwj3.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/quora-fill_tli0kw.png',
   'RiBilibiliFill-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974207/bilibili-fill_xwfeds.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/bilibili-fill_bxdde9.png',
   'FaPaypal-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974210/paypal-fill_h8gt2z.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041814/sig/paypal-fill_jfrl88.png',
   'FaMediumM-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974209/medium-fill_jexwe3.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041813/sig/medium-fill_oxdvcz.png',
   'FaYelp-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974212/yelp-fill_gk9lv4.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041811/sig/yelp-fill_gsxycz.png',
   'SiDribbble-fill':
-    'https://res.cloudinary.com/dacr0umgu/image/upload/w_20,h_20,c_scale/v1636974208/dribbble-fill_bizcak.png',
+    'https://res.cloudinary.com/dacr0umgu/image/upload/v1637041812/sig/dribbble-fill_jwqhrj.png',
 };

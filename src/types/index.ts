@@ -18,7 +18,9 @@ export enum ContentType {
 }
 
 export enum IconDisplayType {
-  FILL = 'Fill',
   LINE = 'Line',
-  OUTLINE = 'Outline',
+  FILL_CIRCLE = 'FillCircle',
+  OUTLINE_CIRCLE = 'OutlineCircle',
+  FILL_SQUARE = 'FillSquare',
+  OUTLINE_SQUARE = 'OutlineSquare',
 }

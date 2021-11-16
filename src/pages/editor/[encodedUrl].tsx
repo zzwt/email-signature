@@ -164,7 +164,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       primary: '#5661b6',
       background: '#ffffff',
       text: '#626262',
-      socialIconType: IconDisplayType.FILL,
+      socialIconType: IconDisplayType.FILL_CIRCLE,
     },
   };
   const [

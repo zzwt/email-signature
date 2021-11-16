@@ -36,8 +36,8 @@
           height: 15px;
           border-radius: 50%;
           color: $red;
-          right: 0;
-          top: -15px;
+          right: 15px;
+          top: -18px;
         }
         .color_picker {
           width: 30px;
@@ -119,17 +119,28 @@
   align-items: center;
   border: 2px solid $transparent;
 }
-
-.added_icon_fill {
-  background: $grey-500;
-  color: $white;
-}
-
 .added_icon_line {
   color: $grey-500;
 }
 
-.added_icon_outline {
+.added_icon_fill_circle {
+  background: $grey-500;
+  color: $white;
+}
+
+.added_icon_outline_circle {
   border: 2px solid $grey-500;
   color: $grey-500;
+}
+
+.added_icon_fill_square {
+  background: $grey-500;
+  color: $white;
+  border-radius: 5px;
+}
+
+.added_icon_outline_square {
+  border: 2px solid $grey-500;
+  color: $grey-500;
+  border-radius: 5px;
 }

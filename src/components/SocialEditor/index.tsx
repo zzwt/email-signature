@@ -53,17 +53,23 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
       const dynamicStyle = () => {
         if (activeSocial !== index) return {};
 
-        if (meta.socialIconType === IconDisplayType.FILL) {
-          return {
-            background: socialIcon.color ? socialIcon.color : meta.primary,
-          };
-        }
         if (meta.socialIconType === IconDisplayType.LINE) {
           return {
             color: socialIcon.color ? socialIcon.color : meta.primary,
           };
         }
-        if (meta.socialIconType === IconDisplayType.OUTLINE) {
+        if (
+          meta.socialIconType === IconDisplayType.FILL_CIRCLE ||
+          meta.socialIconType === IconDisplayType.FILL_SQUARE
+        ) {
+          return {
+            background: socialIcon.color ? socialIcon.color : meta.primary,
+          };
+        }
+        if (
+          meta.socialIconType === IconDisplayType.OUTLINE_CIRCLE ||
+          meta.socialIconType === IconDisplayType.OUTLINE_SQUARE
+        ) {
           return {
             color: socialIcon.color ? socialIcon.color : meta.primary,
             border: `2px solid ${
@@ -75,14 +81,26 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
       };
 
       const iconDisplayClassname = () => {
-        if (meta.socialIconType === IconDisplayType.FILL) {
-          return classNames(styles.added_icon, styles.added_icon_fill);
-        }
         if (meta.socialIconType === IconDisplayType.LINE) {
           return classNames(styles.added_icon, styles.added_icon_line);
         }
-        if (meta.socialIconType === IconDisplayType.OUTLINE) {
-          return classNames(styles.added_icon, styles.added_icon_outline);
+        if (meta.socialIconType === IconDisplayType.FILL_CIRCLE) {
+          return classNames(styles.added_icon, styles.added_icon_fill_circle);
+        }
+        if (meta.socialIconType === IconDisplayType.OUTLINE_CIRCLE) {
+          return classNames(
+            styles.added_icon,
+            styles.added_icon_outline_circle
+          );
+        }
+        if (meta.socialIconType === IconDisplayType.FILL_SQUARE) {
+          return classNames(styles.added_icon, styles.added_icon_fill_square);
+        }
+        if (meta.socialIconType === IconDisplayType.OUTLINE_SQUARE) {
+          return classNames(
+            styles.added_icon,
+            styles.added_icon_outline_square
+          );
         }
         return '';
       };
@@ -192,11 +210,15 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
             <RiExchangeFill
               className={styles.change_icon_type}
               onClick={() => {
-                let newType = IconDisplayType.LINE;
+                let newType = IconDisplayType.OUTLINE_CIRCLE;
+                if (meta.socialIconType === IconDisplayType.OUTLINE_CIRCLE)
+                  newType = IconDisplayType.FILL_SQUARE;
+                if (meta.socialIconType === IconDisplayType.FILL_SQUARE)
+                  newType = IconDisplayType.OUTLINE_SQUARE;
+                if (meta.socialIconType === IconDisplayType.OUTLINE_SQUARE)
+                  newType = IconDisplayType.LINE;
                 if (meta.socialIconType === IconDisplayType.LINE)
-                  newType = IconDisplayType.OUTLINE;
-                if (meta.socialIconType === IconDisplayType.OUTLINE)
-                  newType = IconDisplayType.FILL;
+                  newType = IconDisplayType.FILL_CIRCLE;
                 changeMeta('socialIconType', newType);
               }}
               data-tip

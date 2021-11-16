@@ -85,8 +85,11 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
       position: 'relative',
       borderRadius: '0',
     };
-    if (meta.socialIconType === IconDisplayType.FILL) {
+    if (meta.socialIconType === IconDisplayType.FILL_CIRCLE) {
       defaultStyle.borderRadius = '50%';
+    }
+    if (meta.socialIconType === IconDisplayType.FILL_SQUARE) {
+      defaultStyle.borderRadius = '2PX';
     }
     // if (meta.socialIconType === IconDisplayType.LINE) {
     // }
@@ -96,7 +99,10 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
   };
 
   const getSocialIconLink = (icon: string) => {
-    if (meta.socialIconType === IconDisplayType.FILL) {
+    if (
+      meta.socialIconType === IconDisplayType.FILL_CIRCLE ||
+      meta.socialIconType === IconDisplayType.FILL_SQUARE
+    ) {
       return iconStorageMapping[`${icon}-fill`];
     }
     return iconStorageMapping[`${icon}-outline`];
@@ -121,14 +127,27 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
           src={getSocialIconLink(socialIcon.icon)}
           alt=""
         />
-        {meta.socialIconType === IconDisplayType.OUTLINE && (
+        {meta.socialIconType === IconDisplayType.OUTLINE_CIRCLE && (
           <div
             style={{
               position: 'absolute',
               width: 20,
               height: 20,
-              border: `1.5px solid ${socialIcon.color || meta.primary}`,
+              border: `1.8px solid ${socialIcon.color || meta.primary}`,
               borderRadius: '50%',
+              left: 0,
+              top: 0,
+            }}
+          />
+        )}
+        {meta.socialIconType === IconDisplayType.OUTLINE_SQUARE && (
+          <div
+            style={{
+              position: 'absolute',
+              width: 20,
+              height: 20,
+              border: `1.8px solid ${socialIcon.color || meta.primary}`,
+              borderRadius: '4px',
               left: 0,
               top: 0,
             }}

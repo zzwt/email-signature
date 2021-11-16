@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContentType, IconDisplayType, TemplateProps } from '../types';
-import { iconMapping } from '../components/SocialIcons';
+import { iconMapping, iconStorageMapping } from '../components/SocialIcons';
 import { imageConfigToStyle, normalizeLink, stripLinkProtocol } from '../utils';
 
 const Template1: React.FC<TemplateProps> = ({ config }) => {
@@ -78,65 +78,64 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
       });
 
   const getSocialIconStyle = (iconColor: string | undefined) => {
+    const defaultStyle = {
+      marginRight: '3px',
+      background: iconColor || meta.primary,
+      fontSize: '0',
+      position: 'relative',
+      borderRadius: '0',
+    };
     if (meta.socialIconType === IconDisplayType.FILL) {
-      return {
-        display: 'inline-flex',
-        background: iconColor || meta.primary,
-        color: 'white',
-        width: 20,
-        height: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: '50%',
-        marginRight: 5,
-        fontSize: 11,
-      };
+      defaultStyle.borderRadius = '50%';
     }
-    if (meta.socialIconType === IconDisplayType.LINE) {
-      return {
-        display: 'inline-flex',
-        color: iconColor || meta.primary,
-        width: 20,
-        height: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: '50%',
-        fontSize: 14,
-      };
+    // if (meta.socialIconType === IconDisplayType.LINE) {
+    // }
+    // if (meta.socialIconType === IconDisplayType.OUTLINE) {
+    // }
+    return defaultStyle;
+  };
+
+  const getSocialIconLink = (icon: string) => {
+    if (meta.socialIconType === IconDisplayType.FILL) {
+      return iconStorageMapping[`${icon}-fill`];
     }
-    if (meta.socialIconType === IconDisplayType.OUTLINE) {
-      return {
-        display: 'inline-flex',
-        color: iconColor || meta.primary,
-        width: 20,
-        height: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: '50%',
-        marginRight: 3,
-        fontSize: 11,
-        border: `2px solid ${iconColor || meta.primary}`,
-      };
-    }
-    return {};
+    return iconStorageMapping[`${icon}-outline`];
   };
 
   const renderSocialIcons = () =>
-    social.map((socialIcon: any, index: number) => {
-      const Icon = iconMapping[socialIcon.icon];
-      return (
-        <a
-          // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          style={getSocialIconStyle(socialIcon.color)}
-          href={normalizeLink(socialIcon.link)}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon />
-        </a>
-      );
-    });
+    social.map((socialIcon: any, index: number) => (
+      // const Icon = iconMapping[socialIcon.icon];
+      <a
+        // eslint-disable-next-line react/no-array-index-key
+        key={index}
+        href={normalizeLink(socialIcon.link)}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={getSocialIconStyle(socialIcon.color)}
+      >
+        {/* <Icon /> */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          width={20}
+          height={20}
+          src={getSocialIconLink(socialIcon.icon)}
+          alt=""
+        />
+        {meta.socialIconType === IconDisplayType.OUTLINE && (
+          <div
+            style={{
+              position: 'absolute',
+              width: 20,
+              height: 20,
+              border: `1.5px solid ${socialIcon.color || meta.primary}`,
+              borderRadius: '50%',
+              left: 0,
+              top: 0,
+            }}
+          />
+        )}
+      </a>
+    ));
 
   return (
     <div id="signature">
@@ -309,6 +308,8 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                       <div
                         style={{
                           marginTop: 2,
+                          display: 'flex',
+                          alignItems: 'center',
                         }}
                       >
                         {renderSocialIcons()}

@@ -1,7 +1,7 @@
 export type IconType =
   | 'ImFacebook'
   | 'FaTwitter'
-  | 'FiInstagram'
+  | 'SiInstagram'
   | 'FaLinkedinIn'
   | 'ImSkype'
   | 'FaTumblr'
@@ -28,6 +28,6 @@ export type IconType =
   | 'FaPaypal'
   | 'FaMediumM'
   | 'FaYelp'
-  | 'FiDribbble';
+  | 'SiDribbble';
 
 // export type IconDisplayType = 'Fill' | 'Line' | 'Outline';

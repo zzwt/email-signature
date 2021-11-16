@@ -3,7 +3,7 @@ import { IconType } from './IconType';
 export const iconList: Array<IconType> = [
   'ImFacebook',
   'FaTwitter',
-  'FiInstagram',
+  'SiInstagram',
   'FaLinkedinIn',
   'ImSkype',
   'FaTumblr',
@@ -30,5 +30,5 @@ export const iconList: Array<IconType> = [
   'FaPaypal',
   'FaMediumM',
   'FaYelp',
-  'FiDribbble',
+  'SiDribbble',
 ];

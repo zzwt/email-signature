@@ -165,6 +165,8 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       background: '#ffffff',
       text: '#626262',
       socialIconType: IconDisplayType.FILL_CIRCLE,
+      fontFamily:
+        'Verdana, Roboto, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif',
     },
   };
   const [

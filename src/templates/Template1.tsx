@@ -163,8 +163,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
       style={{
         width: 450,
         overflow: 'hidden',
-
-        // boxSizing: 'content-box',
+        fontFamily: meta.fontFamily,
       }}
     >
       <table

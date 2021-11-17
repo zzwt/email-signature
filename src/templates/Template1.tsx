@@ -157,23 +157,23 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
     ));
 
   return (
-    <div id="signature">
+    <div id="signature" style={{ width: 500, overflow: 'hidden' }}>
       <table
-        // width="600"
-        // border="10"
+        width="500"
         cellSpacing="0"
         cellPadding="0"
-        // bgcolor="red"
-        style={{ background: meta.background }}
+        style={{
+          background: meta.background,
+        }}
       >
         <tbody>
           <tr>
             {/* Avatar */}
             <td
               width="100"
-              style={{ padding: 15 }}
+              style={{ padding: 5 }}
               valign="middle"
-              className="demo"
+              // className="demo"
             >
               {/* <canvas
               id="myCanvas"

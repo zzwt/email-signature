@@ -21,6 +21,7 @@ export const imageConfigToStyle = (imageConfig: any, dimension: number) => {
     }px`,
     backgroundSize: `${zoomedWidth}px ${zoomedHeight}px`,
     borderRadius: '50%',
+    margin: '0 auto',
   };
 };
 

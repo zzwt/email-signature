@@ -180,7 +180,9 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       <div className={styles.left}>
         <div className={styles.editor_wrapper}>
           <div className={styles.preview}>
-            <Component config={config} />
+            <div className={styles.preview_alignment}>
+              <Component config={config} />
+            </div>
             {showCopy && (
               <button
                 type="button"

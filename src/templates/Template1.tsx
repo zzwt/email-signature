@@ -60,8 +60,10 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
-                          color: content.color.value,
-                          textDecoration: 'underline',
+                          color: content.color.value
+                            ? content.color.value
+                            : meta.text,
+                          textDecoration: 'none',
                           fontSize: content.size.value,
                           fontWeight: content.bold.value ? 'bold' : 'normal',
                         }}

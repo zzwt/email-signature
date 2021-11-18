@@ -11,7 +11,8 @@
   justify-content: space-between;
   background: $transparent;
   width: 270px;
-  height: 50vh;
+  min-height: 250px;
+  height: calc(200px + 25vh);
   left: calc(100% - 30px);
   top: 50%;
   transform: translateY(-50%);
@@ -19,6 +20,7 @@
 
 .step_container {
   display: flex;
+  align-items: center;
   // width: 300px;
   .number {
     display: flex;

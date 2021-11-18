@@ -3,16 +3,22 @@
 .container {
   display: flex;
   // min-height: 100vh;
-  min-width: calc(1190px + 7vw);
+  min-width: calc(1290px + 7vw);
 }
+
 .left {
   width: 65%;
-  min-width: 960px;
+  min-width: 1060px;
   min-height: 100vh;
   background: $theme-100;
   padding: 120px 0;
   display: flex;
   align-items: center;
+  .logo {
+    position: absolute;
+    left: 3%;
+    top: 3%;
+  }
 }
 .right {
   width: 35%;

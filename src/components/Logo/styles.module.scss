@@ -1,0 +1,37 @@
+@import '../../styles/_variable.scss';
+
+.container {
+  font-family: 'Kaushan Script', cursive;
+  display: flex;
+  align-items: center;
+  .logo {
+    background: $theme-400;
+    color: $white;
+    padding: 10px 15px;
+    width: 140px;
+    height: 52px;
+    font-size: 20px;
+    line-height: 30px;
+    border-radius: 3px;
+    text-align: center;
+    box-shadow: 5px 5px hex($theme-400, 0.5);
+    p {
+      display: inline-block;
+    }
+    .initial {
+      font-size: 30px;
+    }
+    .small {
+      position: relative;
+      top: -2px;
+    }
+  }
+  .desc {
+    position: relative;
+    margin-left: 13px;
+    color: $theme-400;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 700;
+  }
+}

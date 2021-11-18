@@ -13,6 +13,7 @@ import ThemeColor from '../../components/ThemeColor';
 import { copyWithStyle } from '../../utils';
 import Guide from '../../components/Guide';
 import Done from '../../components/Done';
+import Logo from '../../components/Logo';
 
 const EditorPage: React.FC<Data> = ({ template }) => {
   const Component = useMemo(
@@ -180,6 +181,9 @@ const EditorPage: React.FC<Data> = ({ template }) => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
+        <div className={styles.logo}>
+          <Logo />
+        </div>
         <div className={styles.editor_wrapper}>
           <div className={styles.preview}>
             <div className={styles.preview_alignment}>

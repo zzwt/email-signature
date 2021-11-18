@@ -14,6 +14,7 @@ import { copyWithStyle } from '../../utils';
 import Guide from '../../components/Guide';
 import Done from '../../components/Done';
 import Logo from '../../components/Logo';
+import Footer from '../../components/Footer';
 
 const EditorPage: React.FC<Data> = ({ template }) => {
   const Component = useMemo(
@@ -258,6 +259,9 @@ const EditorPage: React.FC<Data> = ({ template }) => {
         </div>
       </div>
       <div className={styles.right} />
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </div>
   );
 };

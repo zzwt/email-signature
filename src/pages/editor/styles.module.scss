@@ -4,6 +4,7 @@
   display: flex;
   // min-height: 100vh;
   min-width: calc(1290px + 7vw);
+  position: relative;
 }
 
 .left {
@@ -23,6 +24,11 @@
 .right {
   width: 35%;
   background: $theme-400;
+}
+.footer {
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
 }
 .editor_wrapper {
   position: relative;

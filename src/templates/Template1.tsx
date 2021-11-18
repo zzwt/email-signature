@@ -79,13 +79,20 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
         return null;
       });
 
-  const getSocialIconStyle = (iconColor: string | undefined) => {
+  const getSocialIconStyle = (iconColor: string | undefined, src: string) => {
     const defaultStyle = {
+      // display: '',
+      boxSizing: 'content-box',
       marginRight: '5px',
-      background: iconColor || meta.primary,
+      backgroundColor: iconColor || meta.primary,
       fontSize: '0',
       position: 'relative',
       borderRadius: '0',
+      width: '20px',
+      height: '20px',
+      backgroundImage: `url(${src})`,
+      backgroundSize: '20px 20px',
+      border: 'none',
     };
     if (meta.socialIconType === IconDisplayType.FILL_CIRCLE) {
       defaultStyle.borderRadius = '50%';
@@ -93,11 +100,23 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
     if (meta.socialIconType === IconDisplayType.FILL_SQUARE) {
       defaultStyle.borderRadius = '2PX';
     }
-    if (meta.socialIconType === IconDisplayType.LINE) {
-      defaultStyle.marginRight = 0;
+    if (meta.socialIconType === IconDisplayType.OUTLINE_CIRCLE) {
+      defaultStyle.width = '16.4px';
+      defaultStyle.height = '16.4px';
+      defaultStyle.backgroundSize = '16.4px 16.4px';
+      defaultStyle.borderRadius = '50%';
+      defaultStyle.border = `1.8px solid ${iconColor || meta.primary}`;
     }
-    // if (meta.socialIconType === IconDisplayType.OUTLINE) {
-    // }
+    if (meta.socialIconType === IconDisplayType.OUTLINE_SQUARE) {
+      defaultStyle.width = '16.4px';
+      defaultStyle.height = '16.4px';
+      defaultStyle.backgroundSize = '16.4px 16.4px';
+      defaultStyle.borderRadius = '2PX';
+      defaultStyle.border = `1.8px solid ${iconColor || meta.primary}`;
+    }
+    if (meta.socialIconType === IconDisplayType.LINE) {
+      defaultStyle.marginRight = '0';
+    }
     return defaultStyle;
   };
 
@@ -120,43 +139,13 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
         href={normalizeLink(socialIcon.link)}
         target="_blank"
         rel="noopener noreferrer"
-        style={getSocialIconStyle(socialIcon.color)}
-      >
-        {/* <Icon /> */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          width={meta.socialIconType === IconDisplayType.LINE ? 25 : 20}
-          height={meta.socialIconType === IconDisplayType.LINE ? 25 : 20}
-          src={getSocialIconLink(socialIcon.icon)}
-          alt=""
-        />
-        {meta.socialIconType === IconDisplayType.OUTLINE_CIRCLE && (
-          <div
-            style={{
-              position: 'absolute',
-              width: 20,
-              height: 20,
-              border: `1.8px solid ${socialIcon.color || meta.primary}`,
-              borderRadius: '50%',
-              left: 0,
-              top: 0,
-            }}
-          />
-        )}
-        {meta.socialIconType === IconDisplayType.OUTLINE_SQUARE && (
-          <div
-            style={{
-              position: 'absolute',
-              width: 20,
-              height: 20,
-              border: `1.8px solid ${socialIcon.color || meta.primary}`,
-              borderRadius: '4px',
-              left: 0,
-              top: 0,
-            }}
-          />
-        )}
-      </a>
+        style={{
+          ...getSocialIconStyle(
+            socialIcon.color,
+            getSocialIconLink(socialIcon.icon)
+          ),
+        }}
+      ></a>
     ));
 
   return (

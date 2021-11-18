@@ -81,7 +81,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
 
   const getSocialIconStyle = (iconColor: string | undefined, src: string) => {
     const defaultStyle = {
-      // display: '',
+      display: 'inline-block',
       boxSizing: 'content-box',
       marginRight: '5px',
       backgroundColor: iconColor || meta.primary,

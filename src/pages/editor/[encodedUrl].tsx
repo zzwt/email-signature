@@ -15,6 +15,7 @@ import Guide from '../../components/Guide';
 import Done from '../../components/Done';
 import Logo from '../../components/Logo';
 import Footer from '../../components/Footer';
+import { apiServer } from '../../config';
 
 const EditorPage: React.FC<Data> = ({ template }) => {
   const Component = useMemo(
@@ -270,13 +271,14 @@ export async function getServerSideProps(
   context: GetServerSidePropsContext<{ encodedUrl: string }>
 ) {
   try {
-    const response = await axios.post<Data>('http://localhost:3000/api/hello', {
+    const response = await axios.post<Data>(apiServer, {
       encodedUrl: context.params?.encodedUrl,
     });
     return {
       props: { ...response.data }, // will be passed to the page component as props
     };
   } catch (error) {
+    console.log(error);
     return {
       redirect: {
         destination: '/',

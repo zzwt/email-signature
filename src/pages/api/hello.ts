@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { invert } from 'lodash';
-import { urlTemplateMapping } from '../../config/urlTemplateMapping';
+import { urlTemplateMapping } from '../../config';
 
 export type Data = {
   template?: string;

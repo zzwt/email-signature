@@ -21,7 +21,6 @@
 .step_container {
   display: flex;
   align-items: center;
-  // width: 300px;
   .number {
     display: flex;
     justify-content: center;
@@ -70,33 +69,14 @@
   }
 }
 .componet_container {
-  // .heading {
-  //   height: 30%;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
   .content {
-    // height: 100%;
     min-height: 555px;
     width: 100%;
-    // background: $grey-200;
     display: flex;
-    // h1 {
-    //   color: $theme-300;
-    //   font-weight: $font-weight-bold;
-    //   font-size: 25px;
-    // }
-    // h2 {
-    //   color: $grey-600;
-    //   font-size: 10px;
-    // }
   }
 }
 
 .button_group {
-  // height: 10%;
   padding: 20px 0;
   width: 80%;
   margin: auto;

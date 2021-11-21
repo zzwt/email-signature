@@ -38,10 +38,6 @@ const useWizard = (totalSteps: number) => {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Step: React.FC<StepProps> = ({ title, description, component }) => (
   <div className={styles.componet_container}>
-    {/* <div className={styles.heading}>
-    
-    </div> */}
-
     <div className={styles.content}>{component}</div>
   </div>
 );

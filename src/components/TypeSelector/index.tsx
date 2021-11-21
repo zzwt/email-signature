@@ -4,7 +4,6 @@ import styles from './styles.module.scss';
 
 interface TypeSelectorProps {
   label: string;
-  // options: string[];
   active: string;
   type: { [key: string]: string };
   onChange?: (value: string) => void | null;

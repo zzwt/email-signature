@@ -18,7 +18,6 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                 <div
                   style={{
                     minWidth: '200px',
-                    // color: field.label.color.value,
                   }}
                 >
                   {label.display.value && label.value.trim().length > 0 && (
@@ -135,7 +134,6 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
 
   const renderSocialIcons = () =>
     social.map((socialIcon: any, index: number) => (
-      // const Icon = iconMapping[socialIcon.icon];
       // eslint-disable-next-line jsx-a11y/anchor-has-content
       <a
         // eslint-disable-next-line react/no-array-index-key
@@ -175,107 +173,8 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
               <table>
                 <tr>
                   {/* Avatar */}
-                  <td
-                    width="140"
-                    style={{ padding: 5 }}
-                    valign="middle"
-                    // className="demo"
-                  >
-                    {/* <canvas
-              id="myCanvas"
-              width="90"
-              height="90"
-              style={{ display: 'none', verticalAlign: 'bottom' }}
-            ></canvas> */}
-
-                    {
-                      // <div style={{ width: 80, height: 80 }}>
-                      <div
-                        // onError={(e) => (e.target.src = 'unnamed.png')}
-                        // src={config.avatar.image}
-                        // width="80px"
-                        // height="80px"
-                        style={
-                          imageConfigToStyle(config.images[0], 90)
-                          // {
-                          // verticalAlign: 'bottom',
-                          // position: 'absolute',
-                          // flexShrink: 1,
-                          // position: 'absolute',
-                          // display: 'inline-block',
-                          // clip: 'rect(98px, 465px, 398px, 165px)',
-                          // objectFit: 'cover',
-                          // backgroundRepeat: 'no-repeat',
-                          // clip: 'rect(98px, 465px, 398px, 165px)',
-                          // }
-                        }
-                      />
-                      // </div>
-                    }
-
-                    {/* {!finalImage && (
-              <div>
-                <Dropzone
-                  onDrop={(file) => {
-                    if (file[0].type.includes('image/')) {
-                      let that = this;
-                      var reader = new FileReader();
-                      reader.readAsDataURL(file[0]);
-                      reader.onload = function () {
-                        that.setState({ image: reader.result });
-                      };
-                      reader.onerror = function (error) {};
-                    } else {
-                      alert('Please upload a valid Image file!');
-                    }
-                  }}
-                >
-                  {({ getRootProps, getInputProps }) => (
-                    <section>
-                      <div {...getRootProps()}>
-                        <input {...getInputProps()} />
-                        <ReactAvatarEditor
-                          ref={this.setEditorRef}
-                          image={this.state.image}
-                          width={90}
-                          height={90}
-                          color={[255, 255, 255, 0.6]} // RGBA
-                          scale={this.state.scrollValue}
-                          rotate={0}
-                          borderRadius={90}
-                          position={this.state.position}
-                          onDragEnd={(e) => e.stopPropagation()}
-                          onMouseUp={(e) => e.stopPropagation()}
-                          onPositionChange={(e) =>
-                            this.setState({ position: { x: e.x, y: e.y } })
-                          }
-                        />
-                      </div>
-                    </section>
-                  )}
-                </Dropzone>
-              </div>
-            )} */}
-
-                    {/* import image from url */}
-                    {/* <input
-              type="text"
-              style={{
-                margin: 5,
-                borderRadius: 3,
-                border: '1px solid gray',
-                padding: 5,
-                fontSize: 10,
-                display: isFinished ? 'none' : 'block',
-              }}
-              placeholder="Enter Image URL/Link"
-              onChange={(result) => {
-                this.toDataURL(result.target.value, (data) => {
-                  this.setState({ image: data });
-                });
-              }}
-            /> */}
-                    {/* end of import image from url */}
+                  <td width="140" style={{ padding: 5 }} valign="middle">
+                    <div style={imageConfigToStyle(config.images[0], 90)} />
                   </td>
 
                   {/* Info Fields */}

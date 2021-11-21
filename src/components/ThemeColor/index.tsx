@@ -27,8 +27,6 @@ const ThemeColor: React.FC<ThemeColorProps> = ({ config, changeMeta }) => {
   return (
     <animated.div className={styles.container} style={animatedProps}>
       <div className={styles.theme_color}>
-        {/* <h1>Color Tone</h1>
-        <h2>If you are happy with default color, go to next</h2> */}
         <h2>Click Palette to Change Color</h2>
         <div className={styles.top}>
           <div className={styles.top_element}>Theme</div>

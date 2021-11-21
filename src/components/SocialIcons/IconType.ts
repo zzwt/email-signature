@@ -29,5 +29,3 @@ export type IconType =
   | 'FaMediumM'
   | 'FaYelp'
   | 'SiDribbble';
-
-// export type IconDisplayType = 'Fill' | 'Line' | 'Outline';

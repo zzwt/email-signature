@@ -3,11 +3,9 @@
 .container {
   height: 100%;
   display: flex;
-  // justify-content: space-evenly;
   flex-direction: column;
   width: 350px;
   margin: auto;
-  // background: red;
   h2 {
     margin-bottom: 40px;
     text-align: center;
@@ -21,7 +19,6 @@
       height: 100px;
       border-radius: 7px;
       background: $theme-100;
-      // align-items: center;
       padding: 0 20px;
       gap: 10px;
       .added_icon_container {

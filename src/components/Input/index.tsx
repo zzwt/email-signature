@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styles from './styles.module.scss';
-// import classNames from 'classnames';
 interface InputProps {
   label: string;
   value: string;

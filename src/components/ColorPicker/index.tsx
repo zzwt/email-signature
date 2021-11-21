@@ -1,6 +1,5 @@
 import React from 'react';
 import { HexColorInput, HexColorPicker } from 'react-colorful';
-// import CSS from 'csstype';
 import styles from './styles.module.scss';
 
 interface ColorPickerProps {

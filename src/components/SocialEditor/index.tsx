@@ -150,8 +150,6 @@ const SocialEditor: React.FC<SocialEditorProps> = ({
               }}
               style={{
                 position: 'absolute',
-                // left: '30%',
-                // top: '-210%',
               }}
             />
           )}

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 
 export const useConfig = (defaultConfig: any) => {
   const [config, setConfig] = useState(defaultConfig);

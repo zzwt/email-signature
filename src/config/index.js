@@ -7,4 +7,4 @@ const dev = process.env.NODE_ENV !== 'production';
 
 export const apiServer = dev
   ? 'http://localhost:3000/api/hello'
-  : 'https://vibrant-haibt-d5ba20.netlify.app/.netlify/functions/hello';
+  : 'https://email-signature-dvzol7vr8-zzwt.vercel.app/api/hello';

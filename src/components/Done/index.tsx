@@ -17,7 +17,7 @@ const Done: React.FC = () => {
       <h3>
         Feel free to go back to any of previous steps to make a change. Thank
         you for using our service. If you any questions, send us an email on{' '}
-        <a href="mailto: xxx@gmail.com">xxx@gmail.com</a>
+        <a href="mailto: support@dayshorts.com">support@dayshorts.com</a>
       </h3>
     </animated.div>
   );

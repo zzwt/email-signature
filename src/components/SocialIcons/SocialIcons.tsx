@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classNames from 'classnames';
-import ElementEditor from '../ElementEditor';
-import { TemplateProps } from '../../types';
 import styles from './styles.module.scss';
 import { iconList } from './iconList';
 import { IconType } from './IconType';

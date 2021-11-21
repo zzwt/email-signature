@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { FaAngleRight } from '@react-icons/all-files/fa/FaAngleRight';
 import { FaAngleLeft } from '@react-icons/all-files/fa/FaAngleLeft';
@@ -35,6 +35,7 @@ const useWizard = (totalSteps: number) => {
   return [currentStep, preStep, nextStep] as const;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Step: React.FC<StepProps> = ({ title, description, component }) => (
   <div className={styles.componet_container}>
     {/* <div className={styles.heading}>

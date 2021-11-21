@@ -1,7 +1,6 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
-import { ContentType } from '../../types';
 
 interface TypeSelectorProps {
   label: string;
@@ -22,13 +21,12 @@ const TypeSelector: React.FC<TypeSelectorProps> = ({
   const renderOptions = () =>
     Object.values(type).map((option: string, i: number) => (
       <div
+        // eslint-disable-next-line react/no-array-index-key
         key={i}
         className={classNames(styles.btn, {
           [styles.btn_active]: option === active,
         })}
-        onClick={() => {
-          onChange && onChange(option);
-        }}
+        onClick={() => onChange && onChange(option)}
       >
         {option}
       </div>

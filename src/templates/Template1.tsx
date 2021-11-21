@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContentType, IconDisplayType, TemplateProps } from '../types';
-import { iconMapping, iconStorageMapping } from '../components/SocialIcons';
+import { iconStorageMapping } from '../components/SocialIcons';
 import { imageConfigToStyle, normalizeLink, stripLinkProtocol } from '../utils';
 
 const Template1: React.FC<TemplateProps> = ({ config }) => {
@@ -79,7 +79,10 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
         return null;
       });
 
-  const getSocialIconStyle = (iconColor: string | undefined, src: string) => {
+  const getSocialIconStyle = (
+    iconColor: string | undefined,
+    src: string
+  ): { [key: string]: string } => {
     const defaultStyle = {
       display: 'inline-block',
       boxSizing: 'content-box',
@@ -133,6 +136,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
   const renderSocialIcons = () =>
     social.map((socialIcon: any, index: number) => (
       // const Icon = iconMapping[socialIcon.icon];
+      // eslint-disable-next-line jsx-a11y/anchor-has-content
       <a
         // eslint-disable-next-line react/no-array-index-key
         key={index}
@@ -145,7 +149,7 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
             getSocialIconLink(socialIcon.icon)
           ),
         }}
-      ></a>
+      />
     ));
 
   return (

@@ -27,22 +27,22 @@ export const imageConfigToStyle = (imageConfig: any, dimension: number) => {
 
 export const copyWithStyle = (element: string) => {
   const doc = document;
-  const text = doc.getElementById(element);
+  const text = doc.getElementById(element) as any;
   let range;
   let selection;
 
-  if (doc.body.createTextRange) {
-    range = doc.body.createTextRange();
+  if ((doc.body as any).createTextRange) {
+    range = (doc.body as any).createTextRange();
     range.moveToElement(text);
     range.select();
   } else if (window.getSelection) {
-    selection = window.getSelection();
+    selection = window.getSelection() as any;
     range = doc.createRange();
     range.selectNodeContents(text);
     selection.removeAllRanges();
     selection.addRange(range);
   }
   document.execCommand('copy');
-  window.getSelection().removeAllRanges();
+  window.getSelection()?.removeAllRanges();
   return text?.outerHTML.length;
 };

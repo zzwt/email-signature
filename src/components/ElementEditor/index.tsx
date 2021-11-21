@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { FiArrowUpCircle } from '@react-icons/all-files/fi/FiArrowUpCircle';
 import { RiSettingsLine } from '@react-icons/all-files/ri/RiSettingsLine';
 import classNames from 'classnames';

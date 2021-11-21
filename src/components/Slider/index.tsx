@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Slider as AntdSlider } from 'antd';
 
 import styles from './styles.module.scss';

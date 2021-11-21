@@ -37,7 +37,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
           size: { editable: false, value: 12 },
         },
         content: {
-          value: 'Joel Lu',
+          value: 'Jennie Doe',
           type: { editable: false, value: ContentType.TEXT },
           color: { editable: true },
           bold: { editable: true, value: true },
@@ -55,7 +55,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
           size: { editable: false, value: 12 },
         },
         content: {
-          value: 'Developer',
+          value: 'Managing Director',
           type: { editable: false, value: ContentType.TEXT },
           color: { editable: true },
           bold: { editable: true, value: false },
@@ -65,7 +65,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       },
       {
         label: {
-          value: 'Website',
+          value: 'Website:',
           type: { editable: true, value: 'text' }, // text | icon
           color: { editable: true },
           display: { editable: true, value: true },
@@ -73,7 +73,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
           size: { editable: true, value: 12 },
         },
         content: {
-          value: 'www.google.com',
+          value: 'www.realcommercial.com.au',
           type: { editable: true, value: ContentType.TEXT },
           color: { editable: true },
           bold: { editable: true, value: false },
@@ -83,7 +83,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       },
       {
         label: {
-          value: 'tel',
+          value: 'Tel:',
           type: { editable: true, value: 'text' }, // text | icon
           color: { editable: true },
           display: { editable: true, value: true },
@@ -91,7 +91,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
           size: { editable: true, value: 12 },
         },
         content: {
-          value: '0333333333',
+          value: '(02) 9348 4323',
           type: { editable: true, value: ContentType.TEXT },
           color: { editable: true },
           bold: { editable: true, value: false },
@@ -101,7 +101,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       },
       {
         label: {
-          value: 'email',
+          value: 'Email:',
           type: { editable: true, value: 'text' }, // text | icon
           color: { editable: true },
           display: { editable: true, value: true },
@@ -109,7 +109,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
           size: { editable: true, value: 12 },
         },
         content: {
-          value: 'xxx@gmail.com',
+          value: 'JennieD@gmail.com',
           type: { editable: true, value: ContentType.EMAIL },
           color: { editable: true },
           bold: { editable: true, value: false },
@@ -119,7 +119,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
       },
       {
         label: {
-          value: 'Address',
+          value: 'Address:',
           type: { editable: true, value: 'text' }, // text | icon
           color: { editable: true },
           display: { editable: true, value: true },
@@ -127,7 +127,7 @@ const EditorPage: React.FC<Data> = ({ template }) => {
           size: { editable: true, value: 12 },
         },
         content: {
-          value: 'sss st, Sydney',
+          value: '303 level 3/65 York St, Sydney',
           type: { editable: true, value: ContentType.TEXT },
           color: { editable: true },
           bold: { editable: true, value: false },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { HexColorInput, HexColorPicker } from 'react-colorful';
-import CSS from 'csstype';
+// import CSS from 'csstype';
 import styles from './styles.module.scss';
 
 interface ColorPickerProps {
@@ -9,7 +9,7 @@ interface ColorPickerProps {
   cover?: boolean;
   onColorChange: (value: string) => void;
   handleClose: () => void;
-  style?: CSS.Properties;
+  style?: { [key: string]: string };
 }
 
 const ColorEditor: React.FC<ColorPickerProps> = ({

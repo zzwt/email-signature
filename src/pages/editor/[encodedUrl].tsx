@@ -139,15 +139,15 @@ const EditorPage: React.FC<Data> = ({ template }) => {
     social: [
       {
         icon: 'ImFacebook',
-        link: 'http://xxx1.com',
+        link: 'https://www.facebook.com/jennie.doe.7587',
       },
       {
         icon: 'FaTwitter',
-        link: 'http://xxx2.com',
+        link: 'https://twitter.com/cpaterso',
       },
       {
         icon: 'FaLinkedinIn',
-        link: 'xxx3.com',
+        link: 'https://twitter.com/cpaterso',
       },
     ],
     images: [

@@ -4,7 +4,7 @@ import { invert } from 'lodash';
 import { urlTemplateMapping } from '../../config';
 
 export type Data = {
-  template?: string;
+  template: string;
   error: boolean;
 };
 
@@ -19,5 +19,5 @@ export default function handler(
       .status(200)
       .json({ template: urlToTemplate[encodedUrl], error: false });
   }
-  return res.status(404).json({ error: true });
+  return res.status(404).json({ template: '', error: true });
 }

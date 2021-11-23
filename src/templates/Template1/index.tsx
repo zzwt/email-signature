@@ -1,7 +1,11 @@
 import React from 'react';
-import { ContentType, IconDisplayType, TemplateProps } from '../types';
-import { iconStorageMapping } from '../components/SocialIcons';
-import { imageConfigToStyle, normalizeLink, stripLinkProtocol } from '../utils';
+import { ContentType, IconDisplayType, TemplateProps } from '../../types';
+import { iconStorageMapping } from '../../components/SocialIcons';
+import {
+  imageConfigToStyle,
+  normalizeLink,
+  stripLinkProtocol,
+} from '../../utils';
 
 const Template1: React.FC<TemplateProps> = ({ config }) => {
   const { fields, meta, social } = config;

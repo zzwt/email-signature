@@ -5,7 +5,8 @@ import axios from 'axios';
 import { Data } from '../api/hello';
 import { useConfig } from '../../hooks/useConfig';
 import Editor from '../../components/Editor';
-import { TemplateProps, ContentType, IconDisplayType } from '../../types';
+import { TemplateProps } from '../../types';
+import configs from '../../templates/configs';
 import styles from './styles.module.scss';
 import Wizard from '../../components/Wizard';
 import SocialEditor from '../../components/SocialEditor';
@@ -22,156 +23,14 @@ const EditorPage: React.FC<Data> = ({ template }) => {
     () => dynamic<TemplateProps>(() => import(`../../templates/${template}`)),
     [template]
   );
+  const defaultConfig = useMemo<any>(
+    () => configs[template as keyof typeof configs],
+    [template]
+  );
 
   const [copyClipboardText, setCopyClipboardText] = useState('Clip to Copy');
   const [showCopy, setShwoCopy] = useState(false);
 
-  const defaultConfig = {
-    fields: [
-      {
-        label: {
-          value: 'Full Name',
-          type: { editable: false, value: 'text' }, // text | icon: not supported
-          color: { editable: false },
-          display: { editable: false, value: true },
-          bold: { editable: false, value: false },
-          size: { editable: false, value: 12 },
-        },
-        content: {
-          value: 'Jennie Doe',
-          type: { editable: false, value: ContentType.TEXT },
-          color: { editable: true },
-          bold: { editable: true, value: true },
-          size: { editable: true, value: 20 },
-        },
-        key: 0,
-      },
-      {
-        label: {
-          value: 'Title',
-          type: { editable: false, value: 'text' }, // text | icon
-          color: { editable: false },
-          display: { editable: false, value: true },
-          bold: { editable: false, value: false },
-          size: { editable: false, value: 12 },
-        },
-        content: {
-          value: 'Managing Director',
-          type: { editable: false, value: ContentType.TEXT },
-          color: { editable: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
-        },
-        key: 1,
-      },
-      {
-        label: {
-          value: 'Website:',
-          type: { editable: true, value: 'text' }, // text | icon
-          color: { editable: true },
-          display: { editable: true, value: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
-        },
-        content: {
-          value: 'www.realcommercial.com.au',
-          type: { editable: true, value: ContentType.TEXT },
-          color: { editable: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
-        },
-        key: 2,
-      },
-      {
-        label: {
-          value: 'Tel:',
-          type: { editable: true, value: 'text' }, // text | icon
-          color: { editable: true },
-          display: { editable: true, value: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
-        },
-        content: {
-          value: '(02) 9348 4323',
-          type: { editable: true, value: ContentType.TEXT },
-          color: { editable: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
-        },
-        key: 3,
-      },
-      {
-        label: {
-          value: 'Email:',
-          type: { editable: true, value: 'text' }, // text | icon
-          color: { editable: true },
-          display: { editable: true, value: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
-        },
-        content: {
-          value: 'JennieD@gmail.com',
-          type: { editable: true, value: ContentType.EMAIL },
-          color: { editable: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
-        },
-        key: 4,
-      },
-      {
-        label: {
-          value: 'Address:',
-          type: { editable: true, value: 'text' }, // text | icon
-          color: { editable: true },
-          display: { editable: true, value: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
-        },
-        content: {
-          value: '303 level 3/65 York St, Sydney',
-          type: { editable: true, value: ContentType.TEXT },
-          color: { editable: true },
-          bold: { editable: true, value: false },
-          size: { editable: true, value: 12 },
-        },
-        key: 5,
-      },
-    ],
-    social: [
-      {
-        icon: 'ImFacebook',
-        link: 'https://www.facebook.com/jennie.doe.7587',
-      },
-      {
-        icon: 'FaTwitter',
-        link: 'https://twitter.com/cpaterso',
-      },
-      {
-        icon: 'FaLinkedinIn',
-        link: 'https://twitter.com/cpaterso',
-      },
-    ],
-    images: [
-      {
-        url: '/avatar.png',
-        x: 0,
-        y: 0,
-        width: 1,
-        height: 1,
-        naturalWidth: 300,
-        naturalHeight: 300,
-        zoom: 1,
-      },
-    ],
-    meta: {
-      primary: '#5661b6',
-      background: '#ffffff',
-      text: '#626262',
-      socialIconType: IconDisplayType.FILL_CIRCLE,
-      fontFamily:
-        'Verdana, Roboto, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif',
-    },
-  };
   const [
     config,
     setDefaultFields,
@@ -278,7 +137,6 @@ export async function getServerSideProps(
       props: { ...response.data }, // will be passed to the page component as props
     };
   } catch (error) {
-    console.log(error);
     return {
       redirect: {
         destination: '/',

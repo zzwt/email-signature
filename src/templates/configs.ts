@@ -129,13 +129,6 @@ const configs = {
     images: [
       {
         url: '/avatar.png',
-        x: 0,
-        y: 0,
-        width: 1,
-        height: 1,
-        naturalWidth: 300,
-        naturalHeight: 300,
-        zoom: 1,
       },
     ],
     meta: {

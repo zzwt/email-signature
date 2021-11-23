@@ -1,11 +1,7 @@
 import React from 'react';
 import { ContentType, IconDisplayType, TemplateProps } from '../../types';
 import { iconStorageMapping } from '../../components/SocialIcons';
-import {
-  imageConfigToStyle,
-  normalizeLink,
-  stripLinkProtocol,
-} from '../../utils';
+import { normalizeLink, stripLinkProtocol } from '../../utils';
 
 const Template1: React.FC<TemplateProps> = ({ config }) => {
   const { fields, meta, social } = config;
@@ -177,8 +173,20 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
               <table>
                 <tr>
                   {/* Avatar */}
-                  <td width="140" style={{ padding: 5 }} valign="middle">
-                    <div style={imageConfigToStyle(config.images[0], 90)} />
+                  <td
+                    width="140"
+                    style={{ padding: 5, textAlign: 'center' }}
+                    valign="middle"
+                  >
+                    <img
+                      src={config.images[0].url}
+                      width="100"
+                      height="100"
+                      alt="Avatar"
+                      style={{
+                        borderRadius: '50%',
+                      }}
+                    />
                   </td>
 
                   {/* Info Fields */}

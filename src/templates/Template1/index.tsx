@@ -181,7 +181,6 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                     {config.images[0].initial ? (
                       <div
                         style={{
-                          // display: 'inline-block',
                           background: meta.primary,
                           width: '100px',
                           height: '100px',

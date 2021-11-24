@@ -178,15 +178,33 @@ const Template1: React.FC<TemplateProps> = ({ config }) => {
                     style={{ padding: 5, textAlign: 'center' }}
                     valign="middle"
                   >
-                    <img
-                      src={config.images[0].url}
-                      width="100"
-                      height="100"
-                      alt="Avatar"
-                      style={{
-                        borderRadius: '50%',
-                      }}
-                    />
+                    {config.images[0].initial ? (
+                      <div
+                        style={{
+                          // display: 'inline-block',
+                          background: meta.primary,
+                          width: '100px',
+                          height: '100px',
+                          margin: 'auto',
+                          borderRadius: '50%',
+                          lineHeight: '100px',
+                        }}
+                      >
+                        <span style={{ color: 'white', fontSize: '40px' }}>
+                          {fields[0].content.value.trim().slice(0, 1)}
+                        </span>
+                      </div>
+                    ) : (
+                      <img
+                        src={config.images[0].url}
+                        width="100"
+                        height="100"
+                        alt="Avatar"
+                        style={{
+                          borderRadius: '50%',
+                        }}
+                      />
+                    )}
                   </td>
 
                   {/* Info Fields */}

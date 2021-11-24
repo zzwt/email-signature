@@ -2,17 +2,18 @@
 
 .container {
   display: flex;
-  align-items: flex-end;
+  // align-items: center;
   .widget {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
     flex-grow: 1;
+    justify-content: space-between;
     .url {
       width: 100%;
       display: flex;
       align-items: center;
-      margin-top: 35px;
+      // margin-top: 35px;
       position: relative;
       input {
         flex-grow: 1;
@@ -25,6 +26,9 @@
       }
       input:focus {
         border: 2px solid $theme-300;
+      }
+      input[type='text']:disabled {
+        background: $grey-200;
       }
       button {
         margin-left: 5px;
@@ -42,7 +46,7 @@
       }
       .error {
         position: absolute;
-        top: -23px;
+        top: 30px;
         color: $red;
       }
     }

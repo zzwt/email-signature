@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Checkbox } from 'antd';
 import styles from './styles.module.scss';
 
 interface ImageEditorProps {
@@ -13,6 +14,7 @@ const ImageEditor: React.FC<ImageEditorProps> = React.memo(
     const [imageUrl, setImageUrl] = useState(imageConfig.url);
     const [error, setError] = useState<null | string>(null);
     const [urlInput, setUrlInput] = useState('');
+    const useInitial = imageConfig.initial;
 
     return (
       <div className={styles.container}>
@@ -27,6 +29,7 @@ const ImageEditor: React.FC<ImageEditorProps> = React.memo(
           }}
           onLoad={() => {
             changeImage(index, {
+              ...imageConfig,
               url: error ? lastValidUrl : imageUrl,
             });
           }}
@@ -37,7 +40,7 @@ const ImageEditor: React.FC<ImageEditorProps> = React.memo(
             <input
               id="url"
               type="text"
-              // ref={inputRef}
+              disabled={useInitial}
               value={urlInput}
               placeholder="Enter your Image Url"
               onChange={(e) => {
@@ -47,6 +50,7 @@ const ImageEditor: React.FC<ImageEditorProps> = React.memo(
             />
             <button
               type="button"
+              disabled={useInitial}
               onClick={() => {
                 if (urlInput.length > 0) {
                   setImageUrl(urlInput);
@@ -59,6 +63,20 @@ const ImageEditor: React.FC<ImageEditorProps> = React.memo(
               Load
             </button>
             {error && <div className={styles.error}>{error}</div>}
+          </div>
+          <div>
+            <Checkbox
+              checked={useInitial}
+              onChange={(e) => {
+                setError(null);
+                changeImage(index, {
+                  ...imageConfig,
+                  initial: e.target.checked,
+                });
+              }}
+            >
+              Use Name Initial
+            </Checkbox>
           </div>
         </div>
       </div>

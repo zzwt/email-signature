@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slider as AntdSlider } from 'antd';
-
 import styles from './styles.module.scss';
+
 interface SliderProps {
   label: string;
   value: number;

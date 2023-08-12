@@ -7,4 +7,4 @@ const dev = process.env.NODE_ENV !== 'production';
 
 export const apiServer = dev
   ? 'http://localhost:3000/api/hello'
-  : 'https://sigmailer.parcelload.com/api/hello';
+  : 'https://sigmailer.joellu.dev/api/hello';
